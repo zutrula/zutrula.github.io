@@ -584,7 +584,8 @@
                     </div>
                     <div class="contact-form fade-in">
                         <h3>Request a Demo</h3>
-                        <form>
+                        <!-- Updated form that redirects to Google Form -->
+                        <form id="contactForm">
                             <div class="form-group">
                                 <label for="name">Full Name</label>
                                 <input
@@ -612,6 +613,7 @@
                                     id="phone"
                                     name="phone"
                                     placeholder="+91 XXXXX XXXXX"
+                                    required
                                 />
                             </div>
                             <div class="form-group">
@@ -691,11 +693,42 @@
 
             // Form submission (you can connect this to your backend)
             document
-                .querySelector(".contact-form form")
+                .getElementById("contactForm")
                 .addEventListener("submit", function (e) {
                     e.preventDefault();
+
+                    // Get form data
+                    const name = document.getElementById("name").value;
+                    const email = document.getElementById("email").value;
+                    const phone = document.getElementById("phone").value;
+                    const message = document.getElementById("message").value;
+
+                    // Replace these with your actual Google Form URL and entry IDs
+                    const googleFormBaseUrl =
+                        "https://docs.google.com/forms/d/e/1FAIpQLSe4VrmAX-TXX7aSY3Xwu1FhqSJ_n_aoIbfBzIhaEfk4-qXsKQ/viewform";
+
+                    // Replace these entry IDs with your actual entry IDs from the pre-filled link
+                    const entryIds = {
+                        name: "entry.1971365353", // Replace with your actual entry ID for name
+                        email: "entry.1207444868", // Replace with your actual entry ID for email
+                        phone: "entry.1820085035", // Replace with your actual entry ID for phone
+                        message: "entry.1546172747", // Replace with your actual entry ID for message
+                    };
+
+                    // Build the pre-filled URL
+                    const prefilledUrl =
+                        `${googleFormBaseUrl}?usp=pp_url` +
+                        `&${entryIds.name}=${encodeURIComponent(name)}` +
+                        `&${entryIds.email}=${encodeURIComponent(email)}` +
+                        `&${entryIds.phone}=${encodeURIComponent(phone)}` +
+                        `&${entryIds.message}=${encodeURIComponent(message)}`;
+
+                    // Redirect to Google Form
+                    window.open(prefilledUrl, "_blank");
+
+                    // Show message and reset form
                     alert(
-                        "Thank you for your message! We will get back to you soon.",
+                        "Thank you! Please complete your submission in the new tab that just opened.",
                     );
                     this.reset();
                 });
