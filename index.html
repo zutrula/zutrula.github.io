@@ -431,20 +431,28 @@
             </div>
             <div class="contact-form-container">
                 <h3>Request a Demo</h3>
-                <form autocomplete="off" method="post" name="contact-form">
+                <form
+                    id="contact-form"
+                    autocomplete="off"
+                    method="post"
+                    name="contact-form"
+                >
                     <input
+                        id="contact-name"
                         type="text"
                         name="fullname"
                         placeholder="Your Name"
                         required
                     />
                     <input
+                        id="contact-email"
                         type="email"
                         name="email"
                         placeholder="your@email.com"
                         required
                     />
                     <input
+                        id="contact-phone"
                         type="tel"
                         name="phone"
                         placeholder="+91 XXXXXX XXXXX"
@@ -452,6 +460,7 @@
                         pattern="[\d\+\-\s]+"
                     />
                     <textarea
+                        id="message"
                         name="message"
                         placeholder="Tell us about your travel agency and requirements..."
                         required
@@ -467,5 +476,61 @@
                 >Privacy Policy</a
             >
         </footer>
+        <script>
+            // Form submission (you can connect this to your backend)
+            document
+                .getElementById("contact-form")
+                .addEventListener("submit", function (e) {
+                    e.preventDefault();
+
+                    // Get form data
+                    const name = document.getElementById("contact-name").value;
+                    const email =
+                        document.getElementById("contact-email").value;
+                    const phone =
+                        document.getElementById("contact-phone").value;
+                    const message = document.getElementById("message").value;
+
+                    // Replace these with your actual Google Form URL and entry IDs
+                    const googleFormBaseUrl =
+                        "https://docs.google.com/forms/d/e/1FAIpQLSe4VrmAX-TXX7aSY3Xwu1FhqSJ_n_aoIbfBzIhaEfk4-qXsKQ/viewform";
+
+                    // Replace these entry IDs with your actual entry IDs from the pre-filled link
+                    const entryIds = {
+                        name: "entry.1971365353", // Replace with your actual entry ID for name
+                        email: "entry.1207444868", // Replace with your actual entry ID for email
+                        phone: "entry.1820085035", // Replace with your actual entry ID for phone
+                        message: "entry.1546172747", // Replace with your actual entry ID for message
+                    };
+
+                    // Build the pre-filled URL
+                    const prefilledUrl =
+                        `${googleFormBaseUrl}?usp=pp_url` +
+                        `&${entryIds.name}=${encodeURIComponent(name)}` +
+                        `&${entryIds.email}=${encodeURIComponent(email)}` +
+                        `&${entryIds.phone}=${encodeURIComponent(phone)}` +
+                        `&${entryIds.message}=${encodeURIComponent(message)}`;
+
+                    // Redirect to Google Form
+                    window.open(prefilledUrl, "_blank");
+
+                    // Show message and reset form
+                    alert(
+                        "Thank you! Please complete your submission in the new tab that just opened.",
+                    );
+                    this.reset();
+                });
+
+            // Add some interactive hover effects
+            document.querySelectorAll(".feature-card").forEach((card) => {
+                card.addEventListener("mouseenter", function () {
+                    this.style.transform = "translateY(-10px) scale(1.02)";
+                });
+
+                card.addEventListener("mouseleave", function () {
+                    this.style.transform = "translateY(0) scale(1)";
+                });
+            });
+        </script>
     </body>
 </html>
