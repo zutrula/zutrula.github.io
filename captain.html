@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Zutrula – AI-Powered Travel Solutions</title>
+    <title>Zutrula – AI Travel CRM for Modern Agencies</title>
     <link
       href="https://fonts.googleapis.com/css?family=Inter:wght@400;600;900&display=swap"
       rel="stylesheet"
@@ -99,33 +99,20 @@
       .dropdown:hover .dropdown-content {
         display: block;
       }
-      .logo-img {
-        width: 100px;
-        height: 25px;
-      }
-      @media screen and (min-width: 768px) {
-        .logo-img {
-          width: 150px;
-          height: 40px;
-        }
-      }
-      /* Hero Section */
       .hero {
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
         padding: 4rem 4vw 2rem 4vw;
-        min-height: 70vh;
       }
       .hero-content {
-        max-width: 650px;
+        max-width: 820px;
       }
       .hero-title {
-        font-size: 3.5rem;
+        font-size: 3rem;
         font-weight: 900;
         line-height: 1.1;
-        margin-bottom: 1.5rem;
       }
       .hero-title span {
         color: #3260ff;
@@ -136,10 +123,9 @@
         -webkit-text-fill-color: transparent;
       }
       .hero-desc {
-        font-size: 1.25rem;
+        font-size: 1.2rem;
         margin: 1.5rem 0 2.5rem 0;
         color: #626c7e;
-        line-height: 1.6;
       }
       .cta-btn {
         background: linear-gradient(90deg, #3260ff, #41d1ff);
@@ -151,20 +137,27 @@
         padding: 1rem 2.5rem;
         cursor: pointer;
         box-shadow: 0 4px 20px #3260ff29;
-        transition:
-          box-shadow 0.15s,
-          transform 0.15s;
+        transition: box-shadow 0.15s;
         text-decoration: none;
         display: inline-block;
       }
       .cta-btn:hover {
         box-shadow: 0 8px 32px #41d1ff2f;
-        transform: translateY(-2px);
       }
-      .hero-image {
-        width: 530px;
-        height: 395px;
-        border-radius: 2rem;
+      .logo-img {
+        width: 100px;
+        height: 25px;
+      }
+      @media screen and (min-width: 768px) {
+        .hero-image {
+          width: 530px;
+          height: 395px;
+          border-radius: 2rem;
+        }
+        .logo-img {
+          width: 150px;
+          height: 40px;
+        }
       }
       @media (max-width: 900px) {
         .hero {
@@ -175,143 +168,66 @@
         .hero-image {
           width: 90vw;
           max-width: 400px;
-          height: auto;
-        }
-        .hero-title {
-          font-size: 2.5rem;
-        }
-        .navbar nav {
-          gap: 1rem;
         }
       }
-      /* Products Section */
-      .products-section {
-        background: #f8f9ff;
-        padding: 5rem 4vw;
-      }
-      .products-container {
+      /* Features */
+      .features-section {
         max-width: 1200px;
-        margin: 0 auto;
+        margin: 4rem auto 2rem auto;
+        padding: 0 4vw;
       }
-      .section-title {
-        font-size: 2.5rem;
+      .features-title {
+        font-size: 2rem;
         font-weight: 800;
+        margin-bottom: 2rem;
         text-align: center;
-        margin-bottom: 1rem;
         background: linear-gradient(90deg, #3260ff, #41d1ff);
         color: transparent;
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
-      .section-subtitle {
-        text-align: center;
-        font-size: 1.2rem;
-        color: #626c7e;
-        margin-bottom: 4rem;
+      .features-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: center;
       }
-      .products-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-        gap: 3rem;
-      }
-      .product-card {
+      .feature-card {
         background: #fff;
-        border-radius: 20px;
-        overflow: hidden;
-        box-shadow: 0 8px 30px rgba(50, 96, 255, 0.1);
-        transition:
-          transform 0.3s,
-          box-shadow 0.3s;
+        border-radius: 1.5rem;
+        box-shadow: 0 4px 18px #3260ff08;
+        padding: 2.5rem 2rem;
+        flex: 1 1 300px;
+        max-width: 340px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        min-width: 270px;
+        transition: transform 0.1s;
       }
-      .product-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 16px 50px rgba(50, 96, 255, 0.15);
+      .feature-card:hover {
+        transform: translateY(-8px) scale(1.03);
       }
-      .product-header {
-        padding: 2.5rem 2.5rem 1.5rem 2.5rem;
+      .feature-icon {
+        font-size: 2.1rem;
+        margin-bottom: 1.2rem;
+        color: #4188ff;
       }
-      .product-icon {
-        font-size: 3rem;
-        margin-bottom: 1rem;
-      }
-      .product-card.captain .product-icon {
-        color: #3260ff;
-      }
-      .product-card.navil .product-icon {
-        color: #667eea;
-      }
-      .product-title {
-        font-size: 1.8rem;
-        font-weight: 800;
+      .feature-title {
+        font-size: 1.2rem;
+        font-weight: 700;
         margin-bottom: 0.5rem;
       }
-      .product-tagline {
-        font-size: 1.1rem;
-        color: #626c7e;
-        margin-bottom: 1.5rem;
-      }
-      .product-desc {
+      .feature-desc {
         font-size: 1rem;
         color: #505977;
-        line-height: 1.7;
-        margin-bottom: 2rem;
       }
-      .product-features {
-        list-style: none;
-        padding: 0;
-        margin: 0 0 2rem 0;
-      }
-      .product-features li {
-        padding: 0.5rem 0;
-        display: flex;
-        align-items: center;
-        color: #505977;
-      }
-      .product-features li i {
-        color: #3260ff;
-        margin-right: 0.8rem;
-        font-size: 1.1rem;
-      }
-      .product-card.navil .product-features li i {
-        color: #667eea;
-      }
-      .product-footer {
-        padding: 0 2.5rem 2.5rem 2.5rem;
-      }
-      .product-btn {
-        width: 100%;
-        background: linear-gradient(90deg, #3260ff, #41d1ff);
-        color: #fff;
-        font-size: 1.1rem;
-        font-weight: 600;
-        border: none;
-        border-radius: 30px;
-        padding: 1rem 2rem;
-        cursor: pointer;
-        transition:
-          box-shadow 0.2s,
-          transform 0.2s;
-        text-decoration: none;
-        display: inline-block;
-        text-align: center;
-      }
-      .product-card.navil .product-btn {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      }
-      .product-btn:hover {
-        box-shadow: 0 6px 25px rgba(50, 96, 255, 0.3);
-        transform: translateY(-2px);
-      }
-      @media (max-width: 1000px) {
-        .products-grid {
-          grid-template-columns: 1fr;
-        }
-      }
+
       /* Contact Section */
       .contact-section {
         max-width: 1060px;
-        margin: 5rem auto 0 auto;
+        margin: 4.5rem auto 0 auto;
         padding: 2.5rem 4vw;
         display: flex;
         gap: 3rem;
@@ -327,10 +243,6 @@
         color: #353c56;
         font-size: 1rem;
         line-height: 1.7;
-      }
-      .navil-icon {
-        height: 80px;
-        width: 80px;
       }
       .contact-info h2 {
         color: #3260ff;
@@ -443,7 +355,7 @@
   <body>
     <header class="navbar">
       <div class="logo">
-        <a href="navil.html"
+        <a href="index.html"
           ><img src="./zutrula-logo.png" class="logo-img"
         /></a>
       </div>
@@ -460,120 +372,94 @@
         <a href="#contact">Contact</a>
       </nav>
     </header>
-
     <section class="hero">
       <div class="hero-content">
         <div class="hero-title">
-          Transform Your <span>Travel Business</span><br />
-          with AI-Powered Solutions
+          Elevate Your <span>Travel CRM</span><br />
+          with AI-Driven Automation & Seamless Experiences
         </div>
         <div class="hero-desc">
-          Zutrula brings cutting-edge technology to travel agencies with two
-          powerful products: <strong>Captain CRM</strong>
-          for managing your business operations, and
-          <strong>Navil AI Agent</strong> for engaging customers with
-          intelligent conversational experiences. <br /><br />
-          <small>Modern. Intelligent. Built for the Future of Travel.</small>
+          Zutrula is the next-generation Travel CRM built for agile agencies.
+          Automate lead capture, craft smart itineraries, engage travelers, and
+          manage bookings — all in a single, intuitive workspace. Powered by
+          intelligent insights and cloud connectivity to help you deliver
+          <b>unforgettable journeys</b>.<br /><br />
+          <small>Modern. Secure. Instantly Deployable.</small>
         </div>
-        <a class="cta-btn" href="#products">Explore Products</a>
+        <a class="cta-btn" href="#contact">Get Started Free</a>
       </div>
-      <div>
+      <div class="">
         <img
           src="./sm_int.png"
-          alt="Zutrula platform interface"
+          alt="Hero image description"
           class="hero-image"
         />
       </div>
     </section>
-
-    <section class="products-section" id="products">
-      <div class="products-container">
-        <h2 class="section-title">Our Products</h2>
-        <p class="section-subtitle">
-          Choose the right solution for your travel business needs
-        </p>
-
-        <div class="products-grid">
-          <!-- Captain CRM -->
-          <div class="product-card captain">
-            <div class="product-header">
-              <div class="product-icon">
-                <i class="fas fa-chart-line"></i>
-              </div>
-              <h3 class="product-title">Captain CRM</h3>
-              <p class="product-tagline">AI Travel CRM for Modern Agencies</p>
-              <p class="product-desc">
-                The next-generation Travel CRM built for agile agencies.
-                Automate lead capture, craft smart itineraries, manage bookings,
-                and grow your business with intelligent insights.
-              </p>
-              <ul class="product-features">
-                <li>
-                  <i class="fas fa-check-circle"></i>
-                  Lead Capture & Dynamic Profiles
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i>
-                  Social Media Integration
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i>
-                  Enquiry Deduplication
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i>
-                  Analytics & Smart Insights
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i>
-                  Secure Invoicing & Payments
-                </li>
-              </ul>
-            </div>
-            <div class="product-footer">
-              <a href="captain.html" class="product-btn">Learn More →</a>
-            </div>
+    <section class="features-section" id="features">
+      <div class="features-title">Next-Gen Features for Pro Travel Agents</div>
+      <div class="features-list">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-users"></i>
           </div>
-
-          <!-- Navil AI Agent -->
-          <div class="product-card navil">
-            <div class="product-header">
-              <div class="product-icon">
-                <img class="navil-icon" src="./navil_logo.jpeg" />
-              </div>
-              <h3 class="product-title">Navil AI Agent</h3>
-              <p class="product-tagline">End-To-End Travel Chat Assistant</p>
-              <p class="product-desc">
-                AI-powered travel companion that guides customers from inquiry
-                to booking with intelligent, conversational experiences. Create
-                personalized packages instantly through chat.
-              </p>
-              <ul class="product-features">
-                <li>
-                  <i class="fas fa-check-circle"></i>
-                  Conversational Trip Planning
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i>
-                  Instant Package Generation
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i>
-                  Mobile-Friendly Experience
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i>
-                  Dynamic Itinerary Builder
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i>
-                  Document Sharing & Verification
-                </li>
-              </ul>
-            </div>
-            <div class="product-footer">
-              <a href="navil.html" class="product-btn">Learn More →</a>
-            </div>
+          <div class="feature-title">Lead Capture & Profiles</div>
+          <div class="feature-desc">
+            Instantly sort and qualify leads. Build dynamic customer profiles
+            and see full traveler history at a glance. AI based lead scoring and
+            prioritization coming soon.
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" style="text-align: center">
+            <i class="fas fa-brands fa-meta"></i>
+            <i class="fas fa-brands fa-google"></i>
+          </div>
+          <div class="feature-title">Social media Integration</div>
+          <div class="feature-desc">
+            Get social media insights and engagement data to enhance your
+            marketing strategies. reduce lead leakage and increase conversion
+            rates.
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fa-solid fa-code-merge"></i>
+          </div>
+          <div class="feature-title">Enquiry Deduplication</div>
+          <div class="feature-desc">
+            Transform Multiple Enquiries from different channels into One
+            Winning Opportunity with Enquiry Deduplication.
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fa-solid fa-folder-open"></i>
+          </div>
+          <div class="feature-title">One-Click Document Integration</div>
+          <div class="feature-desc">
+            All-In-One Document Hub: Empower Agents to Consolidate Customer
+            Files for Smarter Engagement and Trip Planning
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fa-solid fa-chart-line"></i>
+          </div>
+          <div class="feature-title">Analytics & Smart Insights</div>
+          <div class="feature-desc">
+            Visualize pipeline, forecast sales, and get actionable
+            recommendations on growing your agency—powered by real-time data.
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fa-solid fa-file-invoice-dollar"></i>
+          </div>
+          <div class="feature-title">Simple, Secure Invoicing</div>
+          <div class="feature-desc">
+            Send professional invoices, Collect deposits and track payments.
+            PCI-compliant security and one-click receipts.
           </div>
         </div>
       </div>
@@ -629,7 +515,7 @@
           <textarea
             id="message"
             name="message"
-            placeholder="Tell us about your travel business and which product interests you..."
+            placeholder="Tell us about your travel agency and requirements..."
             required
           ></textarea>
           <button type="submit" class="send-btn">Send Message</button>
@@ -643,29 +529,32 @@
         >Privacy Policy</a
       >
     </footer>
-
     <script>
-      // Form submission
+      // Form submission (you can connect this to your backend)
       document
         .getElementById("contact-form")
         .addEventListener("submit", function (e) {
           e.preventDefault();
 
+          // Get form data
           const name = document.getElementById("contact-name").value;
           const email = document.getElementById("contact-email").value;
           const phone = document.getElementById("contact-phone").value;
           const message = document.getElementById("message").value;
 
+          // Replace these with your actual Google Form URL and entry IDs
           const googleFormBaseUrl =
             "https://docs.google.com/forms/d/e/1FAIpQLSe4VrmAX-TXX7aSY3Xwu1FhqSJ_n_aoIbfBzIhaEfk4-qXsKQ/viewform";
 
+          // Replace these entry IDs with your actual entry IDs from the pre-filled link
           const entryIds = {
-            name: "entry.1971365353",
-            email: "entry.1207444868",
-            phone: "entry.1820085035",
-            message: "entry.1546172747",
+            name: "entry.1971365353", // Replace with your actual entry ID for name
+            email: "entry.1207444868", // Replace with your actual entry ID for email
+            phone: "entry.1820085035", // Replace with your actual entry ID for phone
+            message: "entry.1546172747", // Replace with your actual entry ID for message
           };
 
+          // Build the pre-filled URL
           const prefilledUrl =
             `${googleFormBaseUrl}?usp=pp_url` +
             `&${entryIds.name}=${encodeURIComponent(name)}` +
@@ -673,13 +562,26 @@
             `&${entryIds.phone}=${encodeURIComponent(phone)}` +
             `&${entryIds.message}=${encodeURIComponent(message)}`;
 
+          // Redirect to Google Form
           window.open(prefilledUrl, "_blank");
 
+          // Show message and reset form
           alert(
             "Thank you! Please complete your submission in the new tab that just opened.",
           );
           this.reset();
         });
+
+      // Add some interactive hover effects
+      document.querySelectorAll(".feature-card").forEach((card) => {
+        card.addEventListener("mouseenter", function () {
+          this.style.transform = "translateY(-10px) scale(1.02)";
+        });
+
+        card.addEventListener("mouseleave", function () {
+          this.style.transform = "translateY(0) scale(1)";
+        });
+      });
     </script>
   </body>
 </html>

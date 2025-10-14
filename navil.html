@@ -1,0 +1,667 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navil – AI Travel Chat Assistant | Zutrula</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Inter:wght@400;600;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        font-family: "Inter", Arial, sans-serif;
+        background: #fff;
+        color: #1b2233;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Sticky Full-Page Slides Container */
+      .slides-container {
+        position: relative;
+      }
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem 4vw;
+        background: #fff;
+        box-shadow: 0 2px 8px #eceefc59;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+      .navbar .logo {
+        font-weight: 900;
+        font-size: 2rem;
+        letter-spacing: -1px;
+        color: #3260ff;
+      }
+      .navbar nav {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+      }
+      .navbar nav a {
+        text-decoration: none;
+        color: #333;
+        font-weight: 600;
+        transition: color 0.2s;
+      }
+      .navbar nav a:hover {
+        color: #3260ff;
+      }
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      .dropdown-btn {
+        background: none;
+        border: none;
+        color: #333;
+        font-weight: 600;
+        font-size: 1rem;
+        cursor: pointer;
+        padding: 0;
+        font-family: inherit;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .dropdown-btn:hover {
+        color: #3260ff;
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #fff;
+        min-width: 200px;
+        box-shadow: 0 8px 24px rgba(50, 96, 255, 0.15);
+        border-radius: 8px;
+        z-index: 1;
+        top: 100%;
+        margin-top: 0.5rem;
+      }
+      .dropdown-content a {
+        color: #333;
+        padding: 12px 20px;
+        text-decoration: none;
+        display: block;
+        font-weight: 500;
+        transition: background-color 0.2s;
+      }
+      .dropdown-content a:hover {
+        background-color: #f0f4ff;
+        color: #3260ff;
+      }
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+      .logo-img {
+        width: 100px;
+        height: 25px;
+      }
+      @media screen and (min-width: 768px) {
+        .logo-img {
+          width: 150px;
+          height: 40px;
+        }
+      }
+      /* Sticky Full-Page Slides Effect */
+      .image-slide {
+        height: 100vh;
+        width: 100%;
+        position: sticky;
+        top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .full-width-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        margin: 0;
+        padding: 0;
+      }
+
+      .slide-text {
+        display: none;
+      }
+
+      /* Contact wrapper - not sticky */
+      .contact-wrapper {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: #fff;
+        z-index: 10;
+      }
+      /* Contact Section */
+      .contact-section {
+        max-width: 1060px;
+        margin: 5rem auto 0 auto;
+        padding: 2.5rem 4vw;
+        display: flex;
+        gap: 3rem;
+        background: #fff;
+        border-radius: 1.5rem;
+        align-items: flex-start;
+        flex-wrap: wrap;
+      }
+      .contact-info {
+        flex: 1 1 300px;
+        min-width: 260px;
+        color: #353c56;
+        font-size: 1rem;
+        line-height: 1.7;
+      }
+      .contact-info h2 {
+        color: #667eea;
+        font-size: 1.25rem;
+        margin-bottom: 1.2rem;
+        font-weight: 700;
+      }
+      .contact-info ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .contact-info li {
+        margin-bottom: 14px;
+        display: flex;
+        align-items: baseline;
+      }
+      .contact-info li span {
+        margin-right: 0.9em;
+        font-size: 1.2em;
+      }
+      .contact-info .hours {
+        font-size: 0.96rem;
+        color: #516079;
+      }
+      /* Contact Form */
+      .contact-form-container {
+        flex: 2 1 340px;
+        min-width: 320px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 1.3rem;
+        padding: 2.2rem 2rem 2.3rem 2rem;
+        color: #eee;
+        max-width: 432px;
+      }
+      .contact-form-container h3 {
+        color: #fff;
+        font-size: 1.2rem;
+        margin-bottom: 1.8rem;
+        letter-spacing: 0.01em;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.1rem;
+      }
+      form input,
+      form textarea {
+        border-radius: 6px;
+        border: none;
+        outline: none;
+        padding: 1rem;
+        font-size: 1.04rem;
+        font-family: inherit;
+        background: rgba(255, 255, 255, 0.2);
+        color: #fff;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) inset;
+        resize: none;
+      }
+      form input::placeholder,
+      form textarea::placeholder {
+        color: rgba(255, 255, 255, 0.7);
+      }
+      form textarea {
+        min-height: 88px;
+      }
+      .send-btn {
+        background: #fff;
+        color: #667eea;
+        font-size: 1.07rem;
+        font-weight: 600;
+        border: none;
+        border-radius: 30px;
+        padding: 0.95rem 1.8rem;
+        cursor: pointer;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        margin-top: 10px;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+      }
+      .send-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25);
+      }
+      /* Footer */
+      .footer {
+        background: #eef2fc;
+        color: #556;
+        padding: 2.5rem 0 1rem 0;
+        text-align: center;
+        font-size: 1rem;
+        margin-top: 3.7rem;
+      }
+      .footer a {
+        color: #667eea;
+        text-decoration: underline;
+        margin-left: 8px;
+        font-weight: 500;
+      }
+      /* Mobile-specific horizontal carousel */
+      @media (max-width: 768px) {
+        body {
+          overflow-x: hidden;
+        }
+
+        .slides-wrapper {
+          position: relative;
+        }
+
+        .slides-container {
+          display: flex;
+          overflow-x: auto;
+          overflow-y: hidden;
+          scroll-snap-type: x mandatory;
+          -webkit-overflow-scrolling: touch;
+          scroll-behavior: smooth;
+          width: 100%;
+          height: auto;
+          margin: 0;
+          padding: 0;
+          scrollbar-width: none;
+          -ms-overflow-style: none;
+        }
+
+        /* Hide scrollbar */
+        .slides-container::-webkit-scrollbar {
+          display: none;
+        }
+
+        /* Navigation arrows */
+        .carousel-arrow {
+          position: absolute;
+          top: 75%;
+          transform: translateY(-50%);
+          background: rgba(255, 255, 255, 0.3);
+          border: none;
+          color: #667eea;
+          font-size: 1.5rem;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          cursor: pointer;
+          z-index: 10;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition:
+            background 0.3s,
+            opacity 0.3s;
+          opacity: 0.5;
+          backdrop-filter: blur(4px);
+        }
+
+        .carousel-arrow:hover {
+          background: rgba(255, 255, 255, 0.6);
+          opacity: 1;
+        }
+
+        .carousel-arrow.prev {
+          left: 10px;
+        }
+
+        .carousel-arrow.next {
+          right: 10px;
+        }
+
+        .carousel-arrow:disabled {
+          opacity: 0.2;
+          cursor: not-allowed;
+        }
+
+        .image-slide {
+          position: relative;
+          flex: 0 0 100vw;
+          scroll-snap-align: start;
+          height: auto;
+          width: 100vw;
+          display: flex;
+          flex-direction: column;
+          padding: 0;
+          margin: 0;
+        }
+
+        .slide-text {
+          display: block;
+          padding: 1rem 1.5rem;
+          background: #fff;
+        }
+
+        .slide-title {
+          font-size: 1.2rem;
+          font-weight: 700;
+          color: #667eea;
+          margin: 0 0 0.75rem 0;
+          line-height: 1.3;
+        }
+
+        .slide-description {
+          font-size: 1rem;
+          color: #505977;
+          line-height: 1.6;
+          margin: 0;
+        }
+
+        .slide-image-container {
+          height: 30vh;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: #f8f9ff;
+        }
+
+        .full-width-image {
+          object-fit: contain;
+          width: 100%;
+          height: 100%;
+          max-height: 50vh;
+        }
+
+        .contact-wrapper {
+          display: block;
+          min-height: auto;
+        }
+
+        .navbar nav {
+          gap: 1rem;
+          font-size: 0.9rem;
+        }
+      }
+
+      @media (max-width: 900px) {
+        .contact-section {
+          flex-direction: column;
+          max-width: 95vw;
+          padding: 2.2rem 3vw;
+        }
+        .contact-form-container {
+          max-width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="logo">
+        <a href="index.html"
+          ><img src="./zutrula-logo.png" class="logo-img"
+        /></a>
+      </div>
+      <nav>
+        <div class="dropdown">
+          <button class="dropdown-btn">
+            Products <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="captain.html">Captain CRM</a>
+            <a href="navil.html">Navil AI Agent</a>
+          </div>
+        </div>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- Full Width Images with Sticky Scroll -->
+    <div class="slides-wrapper">
+      <button
+        class="carousel-arrow prev"
+        id="prevBtn"
+        aria-label="Previous slide"
+      >
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <button class="carousel-arrow next" id="nextBtn" aria-label="Next slide">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+      <div class="slides-container" id="slidesContainer">
+        <section class="image-slide">
+          <div class="slide-text">
+            <h2 class="slide-title">Navil - Mobile chat, smarter trips!</h2>
+            <p class="slide-description">
+              Turns your trip ideas into travel plans with ease. Navil builds
+              your dream itinerary the smart way! Get instant support all in one
+              chat-powered travel assistant
+            </p>
+          </div>
+          <div class="slide-image-container">
+            <img
+              src="./phone_navil.jpeg"
+              alt="Mobile chat interface"
+              class="full-width-image"
+            />
+          </div>
+        </section>
+
+        <section class="image-slide">
+          <div class="slide-text">
+            <h2 class="slide-title">Navil - Plan faster, travel smarter</h2>
+            <p class="slide-description">
+              Experience the warmth of human-like planning—with Navil. From
+              gathering your wishes to delivering lightning-fast plans, Navil is
+              your complete, conversation-driven travel companion
+            </p>
+          </div>
+          <div class="slide-image-container">
+            <img
+              src="./desktop_navil.jpeg"
+              alt="Navil Chat Assistant Interface"
+              class="full-width-image"
+            />
+          </div>
+        </section>
+
+        <section class="image-slide">
+          <div class="slide-text">
+            <h2 class="slide-title">
+              Navil - Packages that find you fast for your travel style!
+            </h2>
+            <p class="slide-description">
+              Navil listens, learns, and instantly matches you with travel
+              packages from Travel Agencies—live, as you chat.
+            </p>
+          </div>
+          <div class="slide-image-container">
+            <img
+              src="./desktop-packages.jpg"
+              alt="Customized travel packages"
+              class="full-width-image"
+            />
+          </div>
+        </section>
+
+        <section class="image-slide">
+          <div class="slide-text">
+            <h2 class="slide-title">
+              Navil - Every moment mapped, every detail delivered!
+            </h2>
+            <p class="slide-description">
+              Navil reveals day-by-day plans, clear inclusions, and upfront
+              pricing—all in one view. Make fast, informed choices with every
+              trip detail at your fingertips
+            </p>
+          </div>
+          <div class="slide-image-container">
+            <img
+              src="./package_full.jpg"
+              alt="Detailed package itinerary"
+              class="full-width-image"
+            />
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- CONTACT US SECTION (Request a Demo) -->
+    <div class="contact-wrapper">
+      <section class="contact-section" id="contact">
+        <div class="contact-form-container">
+          <h3>Join Navil’s exclusive beta today!</h3>
+          <form
+            id="contact-form"
+            autocomplete="off"
+            method="post"
+            name="contact-form"
+          >
+            <input
+              id="contact-name"
+              type="text"
+              name="fullname"
+              placeholder="Your Name"
+              required
+            />
+            <input
+              id="contact-email"
+              type="email"
+              name="email"
+              placeholder="your@email.com"
+              required
+            />
+            <input
+              id="contact-phone"
+              type="tel"
+              name="phone"
+              placeholder="Phone number"
+              required
+              pattern="[\d\+\-\s]+"
+            />
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Tell us about your travel business and how Navil can help..."
+              required
+            ></textarea>
+            <button type="submit" class="send-btn">Send Message</button>
+          </form>
+        </div>
+        <div class="contact-info">
+          <h2>Contact Information</h2>
+          <ul>
+            <li>
+              <span>📍</span>64/2, Chenniyavalasu, Perundurai – 638052<br />
+              Erode District, Tamil Nadu, India
+            </li>
+            <li><span>📞</span>+91 6374 790 439</li>
+            <li><span>✉️</span>zutrula.app@gmail.com</li>
+            <li>
+              <span>⏰</span
+              ><span class="hours">Mon – Fri: 9:00 AM – 6:00 PM IST</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <footer class="footer">
+        &copy; 2025 Zutrula. All rights reserved.
+        <a href="/privacy-policy.html" target="_blank" rel="noopener"
+          >Privacy Policy</a
+        >
+      </footer>
+    </div>
+
+    <script>
+      // Carousel navigation for mobile
+      const slidesContainer = document.getElementById("slidesContainer");
+      const prevBtn = document.getElementById("prevBtn");
+      const nextBtn = document.getElementById("nextBtn");
+
+      if (slidesContainer && prevBtn && nextBtn) {
+        const slideWidth = slidesContainer.offsetWidth;
+
+        nextBtn.addEventListener("click", () => {
+          slidesContainer.scrollBy({ left: slideWidth, behavior: "smooth" });
+        });
+
+        prevBtn.addEventListener("click", () => {
+          slidesContainer.scrollBy({ left: -slideWidth, behavior: "smooth" });
+        });
+
+        // Update button states based on scroll position
+        slidesContainer.addEventListener("scroll", () => {
+          const maxScroll =
+            slidesContainer.scrollWidth - slidesContainer.clientWidth;
+
+          if (slidesContainer.scrollLeft <= 0) {
+            prevBtn.disabled = true;
+          } else {
+            prevBtn.disabled = false;
+          }
+
+          if (slidesContainer.scrollLeft >= maxScroll - 1) {
+            nextBtn.disabled = true;
+          } else {
+            nextBtn.disabled = false;
+          }
+        });
+
+        // Initial state
+        prevBtn.disabled = true;
+      }
+
+      // Form submission
+      document
+        .getElementById("contact-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const name = document.getElementById("contact-name").value;
+          const email = document.getElementById("contact-email").value;
+          const phone = document.getElementById("contact-phone").value;
+          const message = document.getElementById("message").value;
+
+          const googleFormBaseUrl =
+            "https://docs.google.com/forms/d/e/1FAIpQLSe4VrmAX-TXX7aSY3Xwu1FhqSJ_n_aoIbfBzIhaEfk4-qXsKQ/viewform";
+
+          const entryIds = {
+            name: "entry.1971365353",
+            email: "entry.1207444868",
+            phone: "entry.1820085035",
+            message: "entry.1546172747",
+          };
+
+          const prefilledUrl =
+            `${googleFormBaseUrl}?usp=pp_url` +
+            `&${entryIds.name}=${encodeURIComponent(name)}` +
+            `&${entryIds.email}=${encodeURIComponent(email)}` +
+            `&${entryIds.phone}=${encodeURIComponent(phone)}` +
+            `&${entryIds.message}=${encodeURIComponent(message)}`;
+
+          window.open(prefilledUrl, "_blank");
+
+          alert(
+            "Thank you! Please complete your submission in the new tab that just opened.",
+          );
+          this.reset();
+        });
+    </script>
+  </body>
+</html>
