@@ -1,1400 +1,1281 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Privacy Policy - Zutrula</title>
-        <meta
-            name="description"
-            content="Privacy Policy for Zutrula Travel Management Software - Learn how we protect your data and respect your privacy."
-        />
-        <link
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-            rel="stylesheet"
-        />
-        <style>
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-            }
-
-            body {
-                font-family: "Segoe UI", Talisman, Geneva, Verdana, sans-serif;
-                line-height: 1.6;
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                min-height: 100vh;
-            }
-
-            .container {
-                max-width: 1200px;
-                margin: 0 auto;
-                padding: 0 20px;
-            }
-
-            /* Header */
-            header {
-                background: rgba(255, 255, 255, 0.95);
-                backdrop-filter: blur(10px);
-                position: fixed;
-                width: 100%;
-                top: 0;
-                z-index: 1000;
-                box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-                transition: all 0.3s ease;
-            }
-
-            nav {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 1rem 0;
-            }
-
-            .logo {
-                font-size: 2rem;
-                font-weight: bold;
-                background: linear-gradient(45deg, #667eea, #764ba2);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip: text;
-                text-decoration: none;
-            }
-
-            .nav-links {
-                display: flex;
-                list-style: none;
-                gap: 2rem;
-            }
-
-            .nav-links a {
-                text-decoration: none;
-                color: #333;
-                font-weight: 500;
-                transition: color 0.3s ease;
-            }
-
-            .nav-links a:hover {
-                color: #667eea;
-            }
-
-            .nav-links a.active {
-                color: #667eea;
-                font-weight: 600;
-            }
-
-            /* Main Content */
-            .main-content {
-                padding: 120px 0 80px;
-                color: white;
-            }
-
-            .privacy-container {
-                background: rgba(255, 255, 255, 0.95);
-                backdrop-filter: blur(10px);
-                border-radius: 20px;
-                padding: 40px;
-                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-                color: #333;
-                max-width: 900px;
-                margin: 0 auto;
-            }
-
-            .page-header {
-                text-align: center;
-                margin-bottom: 40px;
-                padding-bottom: 20px;
-                border-bottom: 2px solid #e2e8f0;
-            }
-
-            .page-header h1 {
-                color: #333;
-                font-size: 2.5rem;
-                font-weight: 700;
-                margin-bottom: 10px;
-                background: linear-gradient(45deg, #667eea, #764ba2);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip: text;
-            }
-
-            .page-header .subtitle {
-                color: #64748b;
-                font-size: 1.1rem;
-            }
-
-            .last-updated {
-                background: linear-gradient(135deg, #667eea, #764ba2);
-                color: white;
-                padding: 15px;
-                border-radius: 10px;
-                margin-bottom: 30px;
-                text-align: center;
-                font-weight: 600;
-            }
-
-            h2 {
-                color: #333;
-                font-size: 1.8rem;
-                margin-top: 40px;
-                margin-bottom: 20px;
-                padding-bottom: 10px;
-                border-bottom: 2px solid #667eea;
-                background: linear-gradient(45deg, #667eea, #764ba2);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip: text;
-            }
-
-            h3 {
-                color: #333;
-                font-size: 1.4rem;
-                margin-top: 30px;
-                margin-bottom: 15px;
-                font-weight: 600;
-            }
-
-            h4 {
-                color: #667eea;
-                font-size: 1.2rem;
-                margin-top: 25px;
-                margin-bottom: 12px;
-                font-weight: 600;
-            }
-
-            p {
-                margin-bottom: 15px;
-                text-align: justify;
-                color: #555;
-            }
-
-            ul,
-            ol {
-                margin-left: 20px;
-                margin-bottom: 15px;
-            }
-
-            li {
-                margin-bottom: 8px;
-                color: #555;
-            }
-
-            .important-notice {
-                background: linear-gradient(135deg, #fef3c7, #fde68a);
-                border: 2px solid #f59e0b;
-                border-radius: 10px;
-                padding: 20px;
-                margin: 20px 0;
-            }
-
-            .important-notice h4 {
-                color: #92400e;
-                margin-top: 0;
-            }
-
-            .data-controller-box {
-                background: linear-gradient(135deg, #eff6ff, #dbeafe);
-                border: 2px solid #667eea;
-                border-radius: 10px;
-                padding: 25px;
-                margin: 25px 0;
-            }
-
-            .data-controller-box h3 {
-                color: #667eea;
-                margin-top: 0;
-            }
-
-            .liability-disclaimer {
-                background: linear-gradient(135deg, #fef2f2, #fecaca);
-                border: 2px solid #ef4444;
-                border-radius: 10px;
-                padding: 20px;
-                margin: 20px 0;
-            }
-
-            .liability-disclaimer h4 {
-                color: #dc2626;
-                margin-top: 0;
-            }
-
-            .contact-info {
-                background: linear-gradient(135deg, #667eea, #764ba2);
-                color: white;
-                border-radius: 15px;
-                padding: 30px;
-                margin-top: 30px;
-                text-align: center;
-            }
-
-            .contact-info h2 {
-                margin-top: 0;
-                border-bottom: none;
-                padding-bottom: 0;
-                color: white;
-                background: none;
-                -webkit-text-fill-color: white;
-            }
-
-            .contact-details {
-                font-size: 1.1rem;
-                line-height: 1.8;
-            }
-
-            .contact-details strong {
-                color: white;
-            }
-
-            .contact-details p {
-                color: rgba(255, 255, 255, 0.9);
-                text-align: center;
-            }
-
-            .toc {
-                background: linear-gradient(135deg, #f8fafc, #f1f5f9);
-                border: 2px solid #667eea;
-                border-radius: 10px;
-                padding: 20px;
-                margin-bottom: 30px;
-            }
-
-            .toc h3 {
-                margin-top: 0;
-                color: #667eea;
-            }
-
-            .toc ul {
-                margin-left: 15px;
-            }
-
-            .toc a {
-                color: #667eea;
-                text-decoration: none;
-                transition: color 0.3s ease;
-            }
-
-            .toc a:hover {
-                color: #764ba2;
-                text-decoration: underline;
-            }
-
-            strong {
-                color: #333;
-                font-weight: 600;
-            }
-
-            .definition-term {
-                font-weight: 600;
-                color: #667eea;
-            }
-
-            /* Footer */
-            footer {
-                background: #222;
-                color: white;
-                text-align: center;
-                padding: 2rem 0;
-                margin-top: 40px;
-            }
-
-            footer .container {
-                text-align: center;
-            }
-
-            footer p {
-                text-align: center;
-                margin: 0;
-            }
-
-            footer a {
-                color: #667eea;
-                text-decoration: none;
-                transition: color 0.3s ease;
-            }
-
-            footer a:hover {
-                color: #764ba2;
-            }
-
-            /* Responsive Design */
-            @media (max-width: 768px) {
-                .nav-links {
-                    display: none;
-                }
-
-                .privacy-container {
-                    margin: 20px;
-                    padding: 20px;
-                }
-
-                .page-header h1 {
-                    font-size: 2rem;
-                }
-
-                h2 {
-                    font-size: 1.5rem;
-                }
-
-                h3 {
-                    font-size: 1.3rem;
-                }
-
-                .main-content {
-                    padding: 100px 0 40px;
-                }
-            }
-
-            /* Scroll animations */
-            .fade-in {
-                opacity: 0;
-                transform: translateY(30px);
-                transition: all 0.6s ease;
-            }
-
-            .fade-in.visible {
-                opacity: 1;
-                transform: translateY(0);
-            }
-
-            /* Back to top button */
-            .back-to-top {
-                position: fixed;
-                bottom: 20px;
-                right: 20px;
-                background: linear-gradient(45deg, #667eea, #764ba2);
-                color: white;
-                border: none;
-                border-radius: 50%;
-                width: 50px;
-                height: 50px;
-                font-size: 1.2rem;
-                cursor: pointer;
-                transition: all 0.3s ease;
-                z-index: 1000;
-                display: none;
-            }
-
-            .back-to-top:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
-            }
-
-            .back-to-top.visible {
-                display: block;
-            }
-        </style>
-    </head>
-    <body>
-        <header>
-            <nav class="container">
-                <a href="index.html" class="logo">Zutrula</a>
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="index.html#features">Features</a></li>
-                    <li><a href="index.html#about">About</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
-                    <li>
-                        <a href="privacy-policy.html" class="active">Privacy</a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-
-        <div class="main-content">
-            <div class="container">
-                <div class="privacy-container">
-                    <div class="page-header">
-                        <h1>Privacy Policy</h1>
-                        <div class="subtitle">Zutrula Travel Agent CRM</div>
-                    </div>
-
-                    <div class="last-updated">
-                        <strong>Last updated: June 1, 2025</strong>
-                    </div>
-
-                    <div class="toc">
-                        <h3>Table of Contents</h3>
-                        <ul>
-                            <li>
-                                <a href="#interpretation"
-                                    >Interpretation and Definitions</a
-                                >
-                            </li>
-                            <li>
-                                <a href="#data-relationship"
-                                    >Data Controller-Processor Relationship</a
-                                >
-                            </li>
-                            <li>
-                                <a href="#data-collection"
-                                    >Collecting and Using Your Personal Data</a
-                                >
-                            </li>
-                            <li>
-                                <a href="#data-usage"
-                                    >Use of Your Personal Data</a
-                                >
-                            </li>
-                            <li>
-                                <a href="#data-sharing"
-                                    >Data Sharing and Disclosure</a
-                                >
-                            </li>
-                            <li>
-                                <a href="#data-storage"
-                                    >Data Storage and Security</a
-                                >
-                            </li>
-                            <li><a href="#data-rights">Your Data Rights</a></li>
-                            <li>
-                                <a href="#data-retention">Data Retention</a>
-                            </li>
-                            <li>
-                                <a href="#children-privacy"
-                                    >Children's Privacy</a
-                                >
-                            </li>
-                            <li><a href="#contact">Contact Us</a></li>
-                        </ul>
-                    </div>
-
-                    <p>
-                        This Privacy Policy describes Our policies and
-                        procedures on the collection, use and disclosure of Your
-                        information when You use the Service and tells You about
-                        Your privacy rights and how the law protects You.
-                    </p>
-
-                    <p>
-                        We use Your Personal data to provide and improve the
-                        Service. By using the Service, You agree to the
-                        collection and use of information in accordance with
-                        this Privacy Policy.
-                    </p>
-
-                    <h2 id="interpretation">Interpretation and Definitions</h2>
-
-                    <h3>Interpretation</h3>
-                    <p>
-                        The words of which the initial letter is capitalized
-                        have meanings defined under the following conditions.
-                        The following definitions shall have the same meaning
-                        regardless of whether they appear in singular or in
-                        plural.
-                    </p>
-
-                    <h3>Definitions</h3>
-                    <p>For the purposes of this Privacy Policy:</p>
-
-                    <p>
-                        <span class="definition-term">Account</span> means a
-                        unique account created for You to access our Service or
-                        parts of our Service.
-                    </p>
-
-                    <p>
-                        <span class="definition-term">Affiliate</span> means an
-                        entity that controls, is controlled by or is under
-                        common control with a party, where "control" means
-                        ownership of 50% or more of the shares, equity interest
-                        or other securities entitled to vote for election of
-                        directors or other managing authority.
-                    </p>
-
-                    <p>
-                        <span class="definition-term">Company</span> (referred
-                        to as either "the Company", "We", "Us" or "Our" in this
-                        Agreement) refers to Zutrula, 64/2, Chenniyavalasu,
-                        Perundurai - 638052, Erode district, Tamilnadu, India.
-                    </p>
-
-                    <p>
-                        <span class="definition-term">Cookies</span> are small
-                        files that are placed on Your computer, mobile device or
-                        any other device by a website, containing the details of
-                        Your browsing history on that website among its many
-                        uses.
-                    </p>
-
-                    <p>
-                        <span class="definition-term">Country</span> refers to:
-                        Erode district, Tamil Nadu, India
-                    </p>
-
-                    <p>
-                        <span class="definition-term">Data Controller</span>
-                        means the Travel Agent or Travel Agency who determines
-                        the purposes and means of processing personal data of
-                        their customers (travelers).
-                    </p>
-
-                    <p>
-                        <span class="definition-term">Data Processor</span>
-                        means Zutrula, which processes personal data on behalf
-                        of and under the instructions of the Data Controller
-                        (Travel Agent/Agency).
-                    </p>
-
-                    <p>
-                        <span class="definition-term">Device</span> means any
-                        device that can access the Service such as a computer, a
-                        cellphone or a digital tablet.
-                    </p>
-
-                    <p>
-                        <span class="definition-term">Personal Data</span> is
-                        any information that relates to an identified or
-                        identifiable individual.
-                    </p>
-
-                    <p>
-                        <span class="definition-term">Service</span> refers to
-                        the Zutrula travel agent CRM platform accessible through
-                        the Website and mobile applications.
-                    </p>
-
-                    <p>
-                        <span class="definition-term">Service Provider</span>
-                        means any natural or legal person who processes the data
-                        on behalf of the Company. It refers to third-party
-                        companies or individuals employed by the Company to
-                        facilitate the Service, to provide the Service on behalf
-                        of the Company, to perform services related to the
-                        Service or to assist the Company in analyzing how the
-                        Service is used.
-                    </p>
-
-                    <p>
-                        <span class="definition-term">Travel Agent</span> means
-                        individuals or businesses who use our Service to manage
-                        their travel booking operations and customer
-                        relationships.
-                    </p>
-
-                    <p>
-                        <span class="definition-term">Traveler Data</span> means
-                        personal information about customers of Travel Agents
-                        that is processed through our Service. Travel Agents are
-                        the data controllers and owners of this data.
-                    </p>
-
-                    <p>
-                        <span class="definition-term">Travel Agency</span> means
-                        a business entity that employs or contracts with
-                        multiple Travel Agents.
-                    </p>
-
-                    <p>
-                        <span class="definition-term">Usage Data</span> refers
-                        to data collected automatically, either generated by the
-                        use of the Service or from the Service infrastructure
-                        itself.
-                    </p>
-
-                    <p>
-                        <span class="definition-term">Website</span> refers to
-                        Zutrula, accessible from https://www.zutrula.com
-                    </p>
-
-                    <p>
-                        <span class="definition-term">You</span> means the
-                        individual accessing or using the Service, or the Travel
-                        Agency or other legal entity on behalf of which such
-                        individual is accessing or using the Service, as
-                        applicable.
-                    </p>
-
-                    <h2 id="data-relationship">
-                        Data Controller-Processor Relationship
-                    </h2>
-
-                    <div class="data-controller-box">
-                        <h3>Travel Agent as Data Controller</h3>
-                        <p>
-                            <strong>IMPORTANT:</strong> Travel Agents and Travel
-                            Agencies using our Service are the
-                            <strong>data controllers</strong> and
-                            <strong>owners</strong> of all traveler personal
-                            data they input into our system. This includes but
-                            is not limited to:
-                        </p>
-                        <ul>
-                            <li>
-                                Traveler names, phone numbers, email addresses
-                            </li>
-                            <li>Passport details and identification numbers</li>
-                            <li>Visa information and travel documents</li>
-                            <li>Booking details and payment information</li>
-                            <li>
-                                Any other personal information about their
-                                customers
-                            </li>
-                        </ul>
-                    </div>
-
-                    <h3>Zutrula as Data Processor</h3>
-                    <p>
-                        Zutrula acts solely as a
-                        <strong>data processor</strong>, providing technology
-                        services to help Travel Agents manage and organize their
-                        customer data. We process traveler data only:
-                    </p>
-                    <ul>
-                        <li>
-                            On behalf of and under the instructions of Travel
-                            Agents
-                        </li>
-                        <li>
-                            For the specific purposes directed by Travel Agents
-                        </li>
-                        <li>
-                            In accordance with our contractual obligations to
-                            Travel Agents
-                        </li>
-                    </ul>
-
-                    <h3>Travel Agent Responsibilities and Data Ownership</h3>
-                    <p>Travel Agents are fully responsible for:</p>
-                    <ul>
-                        <li>
-                            <strong>Legal Basis:</strong> Ensuring they have
-                            proper legal grounds to collect and process their
-                            customers' personal data
-                        </li>
-                        <li>
-                            <strong>Consent Management:</strong> Obtaining
-                            necessary consents from travelers for data
-                            collection and processing
-                        </li>
-                        <li>
-                            <strong>Data Accuracy:</strong> Ensuring the
-                            personal data they input is accurate and up-to-date
-                        </li>
-                        <li>
-                            <strong>Customer Rights:</strong> Handling traveler
-                            requests regarding their personal data (access,
-                            correction, deletion, etc.)
-                        </li>
-                        <li>
-                            <strong>Data Use:</strong> How they use, share, or
-                            disclose their customer data outside of our Service
-                        </li>
-                        <li>
-                            <strong>Compliance:</strong> Meeting all applicable
-                            privacy laws and regulations for their data
-                            processing activities
-                        </li>
-                    </ul>
-
-                    <div class="liability-disclaimer">
-                        <h4>Limitation of Zutrula's Responsibility</h4>
-                        <p><strong>WE ARE NOT RESPONSIBLE FOR:</strong></p>
-                        <ul>
-                            <li>
-                                How Travel Agents collect personal data from
-                                their customers
-                            </li>
-                            <li>
-                                Whether Travel Agents have proper consent or
-                                legal basis for data processing
-                            </li>
-                            <li>
-                                Any misuse, unauthorized disclosure, or improper
-                                handling of traveler data by Travel Agents
-                            </li>
-                            <li>
-                                Travel Agents' compliance with privacy laws and
-                                regulations
-                            </li>
-                            <li>
-                                Data breaches or security incidents caused by
-                                Travel Agent actions or negligence
-                            </li>
-                            <li>
-                                Any damages arising from Travel Agents' data
-                                processing activities outside our Service
-                            </li>
-                        </ul>
-                    </div>
-
-                    <h3>Traveler Data Requests</h3>
-                    <p>
-                        If travelers contact us directly regarding their
-                        personal data, we will:
-                    </p>
-                    <ul>
-                        <li>
-                            Redirect them to contact their Travel Agent (the
-                            data controller)
-                        </li>
-                        <li>
-                            Not respond to data subject requests without
-                            instruction from the relevant Travel Agent
-                        </li>
-                        <li>
-                            Assist Travel Agents in responding to legitimate
-                            requests as technically feasible
-                        </li>
-                    </ul>
-
-                    <h2 id="data-collection">
-                        Collecting and Using Your Personal Data
-                    </h2>
-
-                    <h3>Types of Data Collected</h3>
-
-                    <h4>Personal Data of Travel Agents and Agency Users</h4>
-                    <p>
-                        While using Our Service, We may ask You to provide Us
-                        with certain personally identifiable information that
-                        can be used to contact or identify You. This may
-                        include, but is not limited to:
-                    </p>
-                    <ul>
-                        <li>Email address</li>
-                        <li>First name and last name</li>
-                        <li>Phone number</li>
-                        <li>Business name and address</li>
-                        <li>Professional credentials and certifications</li>
-                    </ul>
-
-                    <h4>Traveler Data Managed Through Our Service</h4>
-                    <p>
-                        As a data processor, our Service enables Travel Agents
-                        (data controllers) to manage information about their
-                        customers (travelers). Travel Agents own and control
-                        this data, which may include:
-                    </p>
-                    <ul>
-                        <li>Traveler names and contact information</li>
-                        <li>Passport details and numbers</li>
-                        <li>Visa information and documentation</li>
-                        <li>National identification numbers</li>
-                        <li>PAN card details</li>
-                        <li>Booking vouchers and confirmations</li>
-                        <li>Travel invoices and receipts</li>
-                        <li>Flight, hotel, and transportation tickets</li>
-                        <li>Tour itineraries and travel plans</li>
-                        <li>Payment details and transaction records</li>
-                        <li>
-                            Travel preferences and special requirements
-                            (dietary, accessibility, accommodation preferences)
-                        </li>
-                        <li>
-                            Personal interests and travel history for
-                            personalized service delivery
-                        </li>
-                        <li>Emergency contact information</li>
-                        <li>Travel insurance documentation</li>
-                        <li>Other travel-supporting documents</li>
-                    </ul>
-
-                    <h4>Usage Data</h4>
-                    <p>
-                        Usage Data is collected automatically when using the
-                        Service and may include:
-                    </p>
-                    <ul>
-                        <li>
-                            Your Device's Internet Protocol address (IP address)
-                        </li>
-                        <li>Browser type and version</li>
-                        <li>Pages of our Service that You visit</li>
-                        <li>Time and date of Your visit</li>
-                        <li>Time spent on pages</li>
-                        <li>Unique device identifiers</li>
-                        <li>
-                            Mobile device information (when accessing via
-                            mobile)
-                        </li>
-                        <li>Diagnostic data and system logs</li>
-                    </ul>
-
-                    <h3>Data Access and Segregation</h3>
-                    <p>
-                        <strong>Agency-Level Access:</strong> Travel Agents
-                        within the same Travel Agency can access shared customer
-                        data and bookings as configured by the agency
-                        administrator.
-                    </p>
-                    <p>
-                        <strong>Inter-Agency Privacy:</strong> Data between
-                        different Travel Agencies is completely segregated.
-                        Travel Agents from one agency cannot access data
-                        belonging to another agency.
-                    </p>
-                    <p>
-                        <strong>Individual Agent Access:</strong> Individual
-                        Travel Agents can only access data for their own
-                        customers and any shared agency data they have been
-                        granted permission to access.
-                    </p>
-
-                    <h3>Tracking Technologies and Cookies</h3>
-                    <p>
-                        We use Cookies and similar tracking technologies to
-                        enhance our Service. The technologies We use include:
-                    </p>
-                    <ul>
-                        <li>
-                            <strong>Essential Cookies:</strong> Required for
-                            basic Service functionality, user authentication,
-                            and security.
-                        </li>
-                        <li>
-                            <strong>Functionality Cookies:</strong> Remember
-                            your preferences and settings to provide a
-                            personalized experience.
-                        </li>
-                        <li>
-                            <strong>Analytics Cookies:</strong> Help us
-                            understand how the Service is used to improve
-                            functionality and user experience.
-                        </li>
-                    </ul>
-                    <p>
-                        You can control cookie preferences through your browser
-                        settings, though disabling certain cookies may limit
-                        Service functionality.
-                    </p>
-
-                    <h2 id="data-usage">Use of Your Personal Data</h2>
-
-                    <h3>For Travel Agents and Agencies</h3>
-                    <p>
-                        The Company uses Personal Data for the following
-                        purposes:
-                    </p>
-                    <ul>
-                        <li>
-                            <strong>Service Provision:</strong> To provide and
-                            maintain our CRM Service, including user
-                            authentication and account management
-                        </li>
-                        <li>
-                            <strong>Customer Support:</strong> To respond to
-                            inquiries, provide technical support, and resolve
-                            service issues
-                        </li>
-                        <li>
-                            <strong>Service Improvement:</strong> To analyze
-                            usage patterns and improve Service functionality
-                        </li>
-                        <li>
-                            <strong>Communication:</strong> To send service
-                            updates, security alerts, and administrative
-                            communications
-                        </li>
-                        <li>
-                            <strong>Legal Compliance:</strong> To comply with
-                            applicable laws and regulations
-                        </li>
-                    </ul>
-
-                    <h3>
-                        For Traveler Data (Processed on Behalf of Travel Agents)
-                    </h3>
-                    <div class="important-notice">
-                        <h4>IMPORTANT:</h4>
-                        <p>
-                            We process traveler data solely as a service
-                            provider (data processor) on behalf of Travel Agents
-                            (data controllers). Travel Agents are responsible
-                            for the lawful processing of their customer data.
-                        </p>
-                    </div>
-                    <p>
-                        We process Traveler Data only for purposes directed by
-                        Travel Agents:
-                    </p>
-                    <ul>
-                        <li>
-                            <strong>Data Processing:</strong> To enable Travel
-                            Agents to manage customer relationships and travel
-                            arrangements
-                        </li>
-                        <li>
-                            <strong>Data Storage:</strong> To securely store and
-                            organize travel-related information
-                        </li>
-                        <li>
-                            <strong>Reporting:</strong> To generate reports and
-                            analytics for Travel Agents about their business
-                            operations
-                        </li>
-                        <li>
-                            <strong>Service Delivery:</strong> To facilitate
-                            Travel Agents' delivery of personalized travel
-                            experiences to their customers
-                        </li>
-                    </ul>
-
-                    <h2 id="data-sharing">Data Sharing and Disclosure</h2>
-
-                    <h3>Current Data Sharing Practices</h3>
-                    <p>
-                        We currently do not share Personal Data with third
-                        parties except in the following limited circumstances:
-                    </p>
-
-                    <p>
-                        <strong>Service Providers:</strong> We may engage
-                        trusted third-party service providers (such as AWS for
-                        hosting) who assist in operating our Service. These
-                        providers are bound by confidentiality agreements and
-                        data protection requirements.
-                    </p>
-
-                    <p>
-                        <strong>Travel Agent Directed Sharing:</strong> Travel
-                        Agents may use our Service to share traveler data with
-                        third parties (such as hotels, airlines, or other travel
-                        service providers) to deliver personalized travel
-                        experiences and fulfill booking requirements. Such
-                        sharing is controlled entirely by the Travel Agent as
-                        the data controller.
-                    </p>
-
-                    <p>
-                        <strong>Legal Requirements:</strong> We may disclose
-                        Personal Data when required by law, court order, or
-                        government request, or to protect our legal rights and
-                        safety.
-                    </p>
-
-                    <p>
-                        <strong>Business Transfers:</strong> In the event of a
-                        merger, acquisition, or sale of assets, Personal Data
-                        may be transferred as part of the transaction, subject
-                        to the same privacy protections.
-                    </p>
-
-                    <h3>Future Data Sharing</h3>
-                    <p>
-                        As our Service evolves, we may introduce additional
-                        features that enable Travel Agents to share data with
-                        various travel service providers and integrated
-                        platforms to enhance service delivery.
-                    </p>
-
-                    <h2 id="data-storage">Data Storage and Security</h2>
-
-                    <h3>Data Location</h3>
-                    <p>
-                        Your data is primarily stored on Amazon Web Services
-                        (AWS) servers located in the Mumbai region, India.
-                        Backup copies may be stored in other AWS regions for
-                        disaster recovery purposes.
-                    </p>
-
-                    <h3>Security Measures</h3>
-                    <p>
-                        We implement industry-standard security measures
-                        including:
-                    </p>
-                    <ul>
-                        <li>Encryption of data in transit and at rest</li>
-                        <li>Access controls and authentication mechanisms</li>
-                        <li>Regular security audits and monitoring</li>
-                        <li>Secure backup and disaster recovery procedures</li>
-                        <li>Employee training on data protection</li>
-                    </ul>
-                    <p>
-                        However, no method of transmission or storage is 100%
-                        secure, and we cannot guarantee absolute security.
-                    </p>
-
-                    <h2 id="data-rights">Your Data Rights</h2>
-
-                    <h3>Access and Control</h3>
-                    <p>You have the right to:</p>
-                    <ul>
-                        <li>Access your Personal Data that we hold</li>
-                        <li>Correct inaccurate or incomplete information</li>
-                        <li>
-                            Request deletion of your Personal Data (subject to
-                            legal and contractual obligations)
-                        </li>
-                        <li>Export your data in a portable format</li>
-                        <li>
-                            Restrict processing of your Personal Data in certain
-                            circumstances
-                        </li>
-                    </ul>
-
-                    <div class="data-controller-box">
-                        <h3>For Travel Agents Managing Traveler Data</h3>
-                        <p>
-                            <strong>YOU ARE THE DATA CONTROLLER:</strong> As a
-                            Travel Agent using our Service, you are the data
-                            controller and owner of all traveler personal data
-                            you process through our platform. You are
-                            responsible for:
-                        </p>
-                        <ul>
-                            <li>
-                                <strong>Legal Compliance:</strong> Ensuring you
-                                have lawful basis to collect and process
-                                traveler data
-                            </li>
-                            <li>
-                                <strong>Traveler Consent:</strong> Obtaining
-                                necessary consents and providing privacy notices
-                                to your customers
-                            </li>
-                            <li>
-                                <strong>Data Accuracy:</strong> Maintaining
-                                accurate and up-to-date customer information
-                            </li>
-                            <li>
-                                <strong>Customer Rights:</strong> Handling all
-                                traveler requests regarding their personal data
-                                (access, correction, deletion, portability,
-                                etc.)
-                            </li>
-                            <li>
-                                <strong>Data Security:</strong> Implementing
-                                appropriate security measures for customer data
-                                access
-                            </li>
-                            <li>
-                                <strong>Breach Notification:</strong> Notifying
-                                relevant authorities and individuals of any data
-                                breaches as required by law
-                            </li>
-                            <li>
-                                <strong>Privacy Law Compliance:</strong> Meeting
-                                all applicable privacy regulations for your data
-                                processing activities
-                            </li>
-                        </ul>
-                        <p>
-                            <strong>Zutrula's Role:</strong> We provide
-                            technology services to help you manage your customer
-                            data but we do not control how you collect, use, or
-                            share this data outside our platform.
-                        </p>
-                    </div>
-
-                    <h3>Exercising Your Rights</h3>
-                    <p>
-                        To exercise your data rights, please contact us using
-                        the information provided in the "Contact Us" section. We
-                        will respond to your request within a reasonable
-                        timeframe as required by applicable law.
-                    </p>
-
-                    <h2 id="data-retention">Data Retention</h2>
-
-                    <p>
-                        <strong>Travel Agent Data:</strong> We retain your
-                        account information and business data for as long as
-                        your account remains active, plus a reasonable period
-                        afterwards for legal and business purposes.
-                    </p>
-
-                    <p>
-                        <strong>Traveler Data:</strong> Traveler data is
-                        retained as determined by Travel Agents who control
-                        their customer information. Travel Agents can manage,
-                        update, or delete traveler data at any time through the
-                        Service interface according to their business needs and
-                        legal obligations.
-                    </p>
-
-                    <p>
-                        <strong>Usage Data:</strong> Technical and usage data is
-                        typically retained for shorter periods unless required
-                        for security, legal compliance, or service improvement
-                        purposes.
-                    </p>
-
-                    <h2>Compliance with Indian Privacy Laws</h2>
-
-                    <p>
-                        We are committed to complying with applicable Indian
-                        privacy and data protection laws, including:
-                    </p>
-                    <ul>
-                        <li>The Information Technology Act, 2000</li>
-                        <li>
-                            The Information Technology (Reasonable Security
-                            Practices and Procedures and Sensitive Personal Data
-                            or Information) Rules, 2011
-                        </li>
-                        <li>
-                            Any future data protection legislation enacted in
-                            India
-                        </li>
-                    </ul>
-                    <p>
-                        We regularly review our practices to ensure ongoing
-                        compliance with evolving legal requirements.
-                    </p>
-
-                    <h2 id="children-privacy">Children's Privacy</h2>
-
-                    <h3>Direct Use of Service by Minors</h3>
-                    <p>
-                        Our Service is not intended for direct use by
-                        individuals under the age of 18. However, since Travel
-                        Agencies control user account creation, we cannot
-                        independently verify the age of all CRM users. Travel
-                        Agencies are responsible for ensuring compliance with
-                        age restrictions and applicable laws regarding minor
-                        employees or contractors.
-                    </p>
-
-                    <h3>
-                        Children's Travel Data Processed on Behalf of
-                        Parents/Guardians
-                    </h3>
-                    <p>
-                        We recognize that in the travel industry, parents and
-                        legal guardians frequently need to provide personal
-                        information about their minor children for travel
-                        bookings and arrangements. We may process children's
-                        personal data in the following circumstances:
-                    </p>
-
-                    <p>
-                        <strong>Legitimate Travel Purposes:</strong> When
-                        parents or guardians provide their children's
-                        information through Travel Agents for:
-                    </p>
-                    <ul>
-                        <li>Flight, hotel, and transportation bookings</li>
-                        <li>Passport and visa processing</li>
-                        <li>Travel insurance arrangements</li>
-                        <li>Emergency contact information</li>
-                        <li>Medical information relevant to travel</li>
-                        <li>Age verification for pricing and services</li>
-                    </ul>
-
-                    <p>
-                        <strong>Parental Responsibility:</strong> When
-                        processing children's data:
-                    </p>
-                    <ul>
-                        <li>
-                            We rely on parents/guardians to provide accurate
-                            information
-                        </li>
-                        <li>
-                            We require Travel Agents to ensure they have
-                            appropriate parental consent
-                        </li>
-                        <li>
-                            Parents/guardians retain the right to access,
-                            correct, or request deletion of their children's
-                            data
-                        </li>
-                        <li>
-                            We process children's data only for the specific
-                            travel purposes provided
-                        </li>
-                    </ul>
-
-                    <p>
-                        <strong>Data Protection for Minors:</strong> We apply
-                        enhanced protection measures for children's data:
-                    </p>
-                    <ul>
-                        <li>
-                            Limited data sharing (only as necessary for travel
-                            services)
-                        </li>
-                        <li>Restricted access within our system</li>
-                        <li>
-                            Data retention as controlled by Travel Agents (we do
-                            not automatically delete data)
-                        </li>
-                        <li>
-                            No marketing or promotional communications directed
-                            at minors
-                        </li>
-                    </ul>
-
-                    <p>
-                        <strong>Parental Rights:</strong> Parents and guardians
-                        can:
-                    </p>
-                    <ul>
-                        <li>Request access to their child's travel data</li>
-                        <li>
-                            Correct inaccurate information about their child
-                        </li>
-                        <li>
-                            Request deletion of their child's data (subject to
-                            legal retention requirements)
-                        </li>
-                        <li>
-                            Withdraw consent for processing (where consent is
-                            the legal basis)
-                        </li>
-                    </ul>
-
-                    <p>
-                        If you are a parent or guardian and have concerns about
-                        your child's personal information processed through our
-                        Service, please contact us immediately using the
-                        information in the "Contact Us" section.
-                    </p>
-
-                    <h2>Changes to This Privacy Policy</h2>
-
-                    <p>
-                        We may update this Privacy Policy periodically to
-                        reflect changes in our practices or legal requirements.
-                        When we make significant changes, we will:
-                    </p>
-                    <ul>
-                        <li>Post the updated Privacy Policy on our Website</li>
-                        <li>Update the "Last updated" date</li>
-                        <li>
-                            Notify users via email or through the Service
-                            interface
-                        </li>
-                        <li>
-                            For material changes, we may require renewed consent
-                        </li>
-                    </ul>
-                    <p>
-                        We encourage you to review this Privacy Policy
-                        periodically to stay informed about how we protect your
-                        information.
-                    </p>
-
-                    <h2>International Data Transfers</h2>
-
-                    <p>
-                        While we primarily operate within India, some of our
-                        service providers (such as AWS) may involve
-                        international data transfers for backup and disaster
-                        recovery purposes. When such transfers occur, we ensure
-                        appropriate safeguards are in place to protect your
-                        data.
-                    </p>
-
-                    <div class="contact-info" id="contact">
-                        <h2>Contact Us</h2>
-                        <p>
-                            If you have any questions about this Privacy Policy,
-                            your data rights, or our privacy practices, please
-                            contact us:
-                        </p>
-                        <div class="contact-details">
-                            <p>
-                                <strong>Zutrula</strong><br />
-                                64/2, Chenniyavalasu, Perundurai - 638052<br />
-                                Erode district, Tamil Nadu, India
-                            </p>
-                            <p>
-                                <strong>Email:</strong>
-                                zutrula.app@gmail.com<br />
-                                <strong>Phone:</strong> +916374790439<br />
-                                <strong>Website:</strong>
-                                https://www.zutrula.com
-                            </p>
-                            <p>
-                                For data protection inquiries, please include
-                                "Privacy Policy" in your subject line and
-                                provide detailed information about your request
-                                to help us respond effectively.
-                            </p>
-                        </div>
-                    </div>
-
-                    <hr
-                        style="
-                            margin: 40px 0;
-                            border: none;
-                            border-top: 2px solid #667eea;
-                            opacity: 0.3;
-                        "
-                    />
-                    <p
-                        style="
-                            text-align: center;
-                            color: #64748b;
-                            font-style: italic;
-                            margin-bottom: 0;
-                        "
-                    >
-                        This Privacy Policy is effective as of the date last
-                        updated above and applies to all users of the Zutrula
-                        Service.
-                    </p>
-                </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy - Zutrula</title>
+    <meta
+      name="description"
+      content="Privacy Policy for Zutrula Travel Management Software - Learn how we protect your data and respect your privacy."
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Talisman, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Header */
+      header {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 0;
+      }
+
+      .logo {
+        font-size: 2rem;
+        font-weight: bold;
+        background: linear-gradient(45deg, #667eea, #764ba2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-decoration: none;
+      }
+
+      .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+
+      .nav-links a:hover {
+        color: #667eea;
+      }
+
+      .nav-links a.active {
+        color: #667eea;
+        font-weight: 600;
+      }
+
+      /* Main Content */
+      .main-content {
+        padding: 120px 0 80px;
+        color: white;
+      }
+
+      .privacy-container {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        color: #333;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .page-header {
+        text-align: center;
+        margin-bottom: 40px;
+        padding-bottom: 20px;
+        border-bottom: 2px solid #e2e8f0;
+      }
+
+      .page-header h1 {
+        color: #333;
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+        background: linear-gradient(45deg, #667eea, #764ba2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .page-header .subtitle {
+        color: #64748b;
+        font-size: 1.1rem;
+      }
+
+      .last-updated {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 30px;
+        text-align: center;
+        font-weight: 600;
+      }
+
+      h2 {
+        color: #333;
+        font-size: 1.8rem;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #667eea;
+        background: linear-gradient(45deg, #667eea, #764ba2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      h3 {
+        color: #333;
+        font-size: 1.4rem;
+        margin-top: 30px;
+        margin-bottom: 15px;
+        font-weight: 600;
+      }
+
+      h4 {
+        color: #667eea;
+        font-size: 1.2rem;
+        margin-top: 25px;
+        margin-bottom: 12px;
+        font-weight: 600;
+      }
+
+      p {
+        margin-bottom: 15px;
+        text-align: justify;
+        color: #555;
+      }
+
+      ul,
+      ol {
+        margin-left: 20px;
+        margin-bottom: 15px;
+      }
+
+      li {
+        margin-bottom: 8px;
+        color: #555;
+      }
+
+      .important-notice {
+        background: linear-gradient(135deg, #fef3c7, #fde68a);
+        border: 2px solid #f59e0b;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 20px 0;
+      }
+
+      .important-notice h4 {
+        color: #92400e;
+        margin-top: 0;
+      }
+
+      .data-controller-box {
+        background: linear-gradient(135deg, #eff6ff, #dbeafe);
+        border: 2px solid #667eea;
+        border-radius: 10px;
+        padding: 25px;
+        margin: 25px 0;
+      }
+
+      .data-controller-box h3 {
+        color: #667eea;
+        margin-top: 0;
+      }
+
+      .liability-disclaimer {
+        background: linear-gradient(135deg, #fef2f2, #fecaca);
+        border: 2px solid #ef4444;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 20px 0;
+      }
+
+      .liability-disclaimer h4 {
+        color: #dc2626;
+        margin-top: 0;
+      }
+
+      .contact-info {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+        border-radius: 15px;
+        padding: 30px;
+        margin-top: 30px;
+        text-align: center;
+      }
+
+      .contact-info h2 {
+        margin-top: 0;
+        border-bottom: none;
+        padding-bottom: 0;
+        color: white;
+        background: none;
+        -webkit-text-fill-color: white;
+      }
+
+      .contact-details {
+        font-size: 1.1rem;
+        line-height: 1.8;
+      }
+
+      .contact-details strong {
+        color: white;
+      }
+
+      .contact-details p {
+        color: rgba(255, 255, 255, 0.9);
+        text-align: center;
+      }
+
+      .toc {
+        background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+        border: 2px solid #667eea;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 30px;
+      }
+
+      .toc h3 {
+        margin-top: 0;
+        color: #667eea;
+      }
+
+      .toc ul {
+        margin-left: 15px;
+      }
+
+      .toc a {
+        color: #667eea;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .toc a:hover {
+        color: #764ba2;
+        text-decoration: underline;
+      }
+
+      strong {
+        color: #333;
+        font-weight: 600;
+      }
+
+      .definition-term {
+        font-weight: 600;
+        color: #667eea;
+      }
+
+      /* Footer */
+      footer {
+        background: #222;
+        color: white;
+        text-align: center;
+        padding: 2rem 0;
+        margin-top: 40px;
+      }
+
+      footer .container {
+        text-align: center;
+      }
+
+      footer p {
+        text-align: center;
+        margin: 0;
+      }
+
+      footer a {
+        color: #667eea;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      footer a:hover {
+        color: #764ba2;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+        }
+
+        .privacy-container {
+          margin: 20px;
+          padding: 20px;
+        }
+
+        .page-header h1 {
+          font-size: 2rem;
+        }
+
+        h2 {
+          font-size: 1.5rem;
+        }
+
+        h3 {
+          font-size: 1.3rem;
+        }
+
+        .main-content {
+          padding: 100px 0 40px;
+        }
+      }
+
+      /* Scroll animations */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.6s ease;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Back to top button */
+      .back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: linear-gradient(45deg, #667eea, #764ba2);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        z-index: 1000;
+        display: none;
+      }
+
+      .back-to-top:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+      }
+
+      .back-to-top.visible {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="container">
+        <a href="index.html" class="logo">Zutrula</a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#features">Features</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+          <li>
+            <a href="privacy-policy.html" class="active">Privacy</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="main-content">
+      <div class="container">
+        <div class="privacy-container">
+          <div class="page-header">
+            <h1>Privacy Policy</h1>
+            <div class="subtitle">Zutrula Travel Agent CRM</div>
+          </div>
+
+          <div class="last-updated">
+            <strong>Last updated: June 1, 2025</strong>
+          </div>
+
+          <div class="toc">
+            <h3>Table of Contents</h3>
+            <ul>
+              <li>
+                <a href="#interpretation">Interpretation and Definitions</a>
+              </li>
+              <li>
+                <a href="#data-relationship"
+                  >Data Controller-Processor Relationship</a
+                >
+              </li>
+              <li>
+                <a href="#data-collection"
+                  >Collecting and Using Your Personal Data</a
+                >
+              </li>
+              <li>
+                <a href="#data-usage">Use of Your Personal Data</a>
+              </li>
+              <li>
+                <a href="#data-sharing">Data Sharing and Disclosure</a>
+              </li>
+              <li>
+                <a href="#data-storage">Data Storage and Security</a>
+              </li>
+              <li><a href="#data-rights">Your Data Rights</a></li>
+              <li>
+                <a href="#data-retention">Data Retention</a>
+              </li>
+              <li>
+                <a href="#children-privacy">Children's Privacy</a>
+              </li>
+              <li><a href="#contact">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <p>
+            This Privacy Policy describes Our policies and procedures on the
+            collection, use and disclosure of Your information when You use the
+            Service and tells You about Your privacy rights and how the law
+            protects You.
+          </p>
+
+          <p>
+            We use Your Personal data to provide and improve the Service. By
+            using the Service, You agree to the collection and use of
+            information in accordance with this Privacy Policy.
+          </p>
+
+          <h2 id="interpretation">Interpretation and Definitions</h2>
+
+          <h3>Interpretation</h3>
+          <p>
+            The words of which the initial letter is capitalized have meanings
+            defined under the following conditions. The following definitions
+            shall have the same meaning regardless of whether they appear in
+            singular or in plural.
+          </p>
+
+          <h3>Definitions</h3>
+          <p>For the purposes of this Privacy Policy:</p>
+
+          <p>
+            <span class="definition-term">Account</span> means a unique account
+            created for You to access our Service or parts of our Service.
+          </p>
+
+          <p>
+            <span class="definition-term">Affiliate</span> means an entity that
+            controls, is controlled by or is under common control with a party,
+            where "control" means ownership of 50% or more of the shares, equity
+            interest or other securities entitled to vote for election of
+            directors or other managing authority.
+          </p>
+
+          <p>
+            <span class="definition-term">Company</span> (referred to as either
+            "the Company", "We", "Us" or "Our" in this Agreement) refers to
+            Zutrula, 64/2, Chenniyavalasu, Perundurai - 638052, Erode district,
+            Tamilnadu, India.
+          </p>
+
+          <p>
+            <span class="definition-term">Cookies</span> are small files that
+            are placed on Your computer, mobile device or any other device by a
+            website, containing the details of Your browsing history on that
+            website among its many uses.
+          </p>
+
+          <p>
+            <span class="definition-term">Country</span> refers to: Erode
+            district, Tamil Nadu, India
+          </p>
+
+          <p>
+            <span class="definition-term">Data Controller</span>
+            means the Travel Agent or Travel Agency who determines the purposes
+            and means of processing personal data of their customers
+            (travelers).
+          </p>
+
+          <p>
+            <span class="definition-term">Data Processor</span>
+            means Zutrula, which processes personal data on behalf of and under
+            the instructions of the Data Controller (Travel Agent/Agency).
+          </p>
+
+          <p>
+            <span class="definition-term">Device</span> means any device that
+            can access the Service such as a computer, a cellphone or a digital
+            tablet.
+          </p>
+
+          <p>
+            <span class="definition-term">Personal Data</span> is any
+            information that relates to an identified or identifiable
+            individual.
+          </p>
+
+          <p>
+            <span class="definition-term">Service</span> refers to the Zutrula
+            travel agent CRM platform accessible through the Website and mobile
+            applications.
+          </p>
+
+          <p>
+            <span class="definition-term">Service Provider</span>
+            means any natural or legal person who processes the data on behalf
+            of the Company. It refers to third-party companies or individuals
+            employed by the Company to facilitate the Service, to provide the
+            Service on behalf of the Company, to perform services related to the
+            Service or to assist the Company in analyzing how the Service is
+            used.
+          </p>
+
+          <p>
+            <span class="definition-term">Travel Agent</span> means individuals
+            or businesses who use our Service to manage their travel booking
+            operations and customer relationships.
+          </p>
+
+          <p>
+            <span class="definition-term">Traveler Data</span> means personal
+            information about customers of Travel Agents that is processed
+            through our Service. Travel Agents are the data controllers and
+            owners of this data.
+          </p>
+
+          <p>
+            <span class="definition-term">Travel Agency</span> means a business
+            entity that employs or contracts with multiple Travel Agents.
+          </p>
+
+          <p>
+            <span class="definition-term">Usage Data</span> refers to data
+            collected automatically, either generated by the use of the Service
+            or from the Service infrastructure itself.
+          </p>
+
+          <p>
+            <span class="definition-term">Website</span> refers to Zutrula,
+            accessible from https://www.zutrula.com
+          </p>
+
+          <p>
+            <span class="definition-term">You</span> means the individual
+            accessing or using the Service, or the Travel Agency or other legal
+            entity on behalf of which such individual is accessing or using the
+            Service, as applicable.
+          </p>
+
+          <h2 id="data-relationship">Data Controller-Processor Relationship</h2>
+
+          <div class="data-controller-box">
+            <h3>Travel Agent as Data Controller</h3>
+            <p>
+              <strong>IMPORTANT:</strong> Travel Agents and Travel Agencies
+              using our Service are the <strong>data controllers</strong> and
+              <strong>owners</strong> of all traveler personal data they input
+              into our system. This includes but is not limited to:
+            </p>
+            <ul>
+              <li>Traveler names, phone numbers, email addresses</li>
+              <li>Passport details and identification numbers</li>
+              <li>Visa information and travel documents</li>
+              <li>Booking details and payment information</li>
+              <li>Any other personal information about their customers</li>
+            </ul>
+          </div>
+
+          <h3>Zutrula as Data Processor</h3>
+          <p>
+            Zutrula acts solely as a
+            <strong>data processor</strong>, providing technology services to
+            help Travel Agents manage and organize their customer data. We
+            process traveler data only:
+          </p>
+          <ul>
+            <li>On behalf of and under the instructions of Travel Agents</li>
+            <li>For the specific purposes directed by Travel Agents</li>
+            <li>
+              In accordance with our contractual obligations to Travel Agents
+            </li>
+          </ul>
+
+          <h3>Travel Agent Responsibilities and Data Ownership</h3>
+          <p>Travel Agents are fully responsible for:</p>
+          <ul>
+            <li>
+              <strong>Legal Basis:</strong> Ensuring they have proper legal
+              grounds to collect and process their customers' personal data
+            </li>
+            <li>
+              <strong>Consent Management:</strong> Obtaining necessary consents
+              from travelers for data collection and processing
+            </li>
+            <li>
+              <strong>Data Accuracy:</strong> Ensuring the personal data they
+              input is accurate and up-to-date
+            </li>
+            <li>
+              <strong>Customer Rights:</strong> Handling traveler requests
+              regarding their personal data (access, correction, deletion, etc.)
+            </li>
+            <li>
+              <strong>Data Use:</strong> How they use, share, or disclose their
+              customer data outside of our Service
+            </li>
+            <li>
+              <strong>Compliance:</strong> Meeting all applicable privacy laws
+              and regulations for their data processing activities
+            </li>
+          </ul>
+
+          <div class="liability-disclaimer">
+            <h4>Limitation of Zutrula's Responsibility</h4>
+            <p><strong>WE ARE NOT RESPONSIBLE FOR:</strong></p>
+            <ul>
+              <li>
+                How Travel Agents collect personal data from their customers
+              </li>
+              <li>
+                Whether Travel Agents have proper consent or legal basis for
+                data processing
+              </li>
+              <li>
+                Any misuse, unauthorized disclosure, or improper handling of
+                traveler data by Travel Agents
+              </li>
+              <li>
+                Travel Agents' compliance with privacy laws and regulations
+              </li>
+              <li>
+                Data breaches or security incidents caused by Travel Agent
+                actions or negligence
+              </li>
+              <li>
+                Any damages arising from Travel Agents' data processing
+                activities outside our Service
+              </li>
+            </ul>
+          </div>
+
+          <h3>Traveler Data Requests</h3>
+          <p>
+            If travelers contact us directly regarding their personal data, we
+            will:
+          </p>
+          <ul>
+            <li>
+              Redirect them to contact their Travel Agent (the data controller)
+            </li>
+            <li>
+              Not respond to data subject requests without instruction from the
+              relevant Travel Agent
+            </li>
+            <li>
+              Assist Travel Agents in responding to legitimate requests as
+              technically feasible
+            </li>
+          </ul>
+
+          <h2 id="data-collection">Collecting and Using Your Personal Data</h2>
+
+          <h3>Types of Data Collected</h3>
+
+          <h4>Personal Data of Travel Agents and Agency Users</h4>
+          <p>
+            While using Our Service, We may ask You to provide Us with certain
+            personally identifiable information that can be used to contact or
+            identify You. This may include, but is not limited to:
+          </p>
+          <ul>
+            <li>Email address</li>
+            <li>First name and last name</li>
+            <li>Phone number</li>
+            <li>Business name and address</li>
+            <li>Professional credentials and certifications</li>
+          </ul>
+
+          <h4>Traveler Data Managed Through Our Service</h4>
+          <p>
+            As a data processor, our Service enables Travel Agents (data
+            controllers) to manage information about their customers
+            (travelers). Travel Agents own and control this data, which may
+            include:
+          </p>
+          <ul>
+            <li>Traveler names and contact information</li>
+            <li>Passport details and numbers</li>
+            <li>Visa information and documentation</li>
+            <li>National identification numbers</li>
+            <li>PAN card details</li>
+            <li>Booking vouchers and confirmations</li>
+            <li>Travel invoices and receipts</li>
+            <li>Flight, hotel, and transportation tickets</li>
+            <li>Tour itineraries and travel plans</li>
+            <li>Payment details and transaction records</li>
+            <li>
+              Travel preferences and special requirements (dietary,
+              accessibility, accommodation preferences)
+            </li>
+            <li>
+              Personal interests and travel history for personalized service
+              delivery
+            </li>
+            <li>Emergency contact information</li>
+            <li>Travel insurance documentation</li>
+            <li>Other travel-supporting documents</li>
+          </ul>
+
+          <h4>Usage Data</h4>
+          <p>
+            Usage Data is collected automatically when using the Service and may
+            include:
+          </p>
+          <ul>
+            <li>Your Device's Internet Protocol address (IP address)</li>
+            <li>Browser type and version</li>
+            <li>Pages of our Service that You visit</li>
+            <li>Time and date of Your visit</li>
+            <li>Time spent on pages</li>
+            <li>Unique device identifiers</li>
+            <li>Mobile device information (when accessing via mobile)</li>
+            <li>Diagnostic data and system logs</li>
+          </ul>
+
+          <h3>Data Access and Segregation</h3>
+          <p>
+            <strong>Agency-Level Access:</strong> Travel Agents within the same
+            Travel Agency can access shared customer data and bookings as
+            configured by the agency administrator.
+          </p>
+          <p>
+            <strong>Inter-Agency Privacy:</strong> Data between different Travel
+            Agencies is completely segregated. Travel Agents from one agency
+            cannot access data belonging to another agency.
+          </p>
+          <p>
+            <strong>Individual Agent Access:</strong> Individual Travel Agents
+            can only access data for their own customers and any shared agency
+            data they have been granted permission to access.
+          </p>
+
+          <h3>Tracking Technologies and Cookies</h3>
+          <p>
+            We use Cookies and similar tracking technologies to enhance our
+            Service. The technologies We use include:
+          </p>
+          <ul>
+            <li>
+              <strong>Essential Cookies:</strong> Required for basic Service
+              functionality, user authentication, and security.
+            </li>
+            <li>
+              <strong>Functionality Cookies:</strong> Remember your preferences
+              and settings to provide a personalized experience.
+            </li>
+            <li>
+              <strong>Analytics Cookies:</strong> Help us understand how the
+              Service is used to improve functionality and user experience.
+            </li>
+          </ul>
+          <p>
+            You can control cookie preferences through your browser settings,
+            though disabling certain cookies may limit Service functionality.
+          </p>
+
+          <h2 id="data-usage">Use of Your Personal Data</h2>
+
+          <h3>For Travel Agents and Agencies</h3>
+          <p>The Company uses Personal Data for the following purposes:</p>
+          <ul>
+            <li>
+              <strong>Service Provision:</strong> To provide and maintain our
+              CRM Service, including user authentication and account management
+            </li>
+            <li>
+              <strong>Customer Support:</strong> To respond to inquiries,
+              provide technical support, and resolve service issues
+            </li>
+            <li>
+              <strong>Service Improvement:</strong> To analyze usage patterns
+              and improve Service functionality
+            </li>
+            <li>
+              <strong>Communication:</strong> To send service updates, security
+              alerts, and administrative communications
+            </li>
+            <li>
+              <strong>Legal Compliance:</strong> To comply with applicable laws
+              and regulations
+            </li>
+          </ul>
+
+          <h3>For Traveler Data (Processed on Behalf of Travel Agents)</h3>
+          <div class="important-notice">
+            <h4>IMPORTANT:</h4>
+            <p>
+              We process traveler data solely as a service provider (data
+              processor) on behalf of Travel Agents (data controllers). Travel
+              Agents are responsible for the lawful processing of their customer
+              data.
+            </p>
+          </div>
+          <p>
+            We process Traveler Data only for purposes directed by Travel
+            Agents:
+          </p>
+          <ul>
+            <li>
+              <strong>Data Processing:</strong> To enable Travel Agents to
+              manage customer relationships and travel arrangements
+            </li>
+            <li>
+              <strong>Data Storage:</strong> To securely store and organize
+              travel-related information
+            </li>
+            <li>
+              <strong>Reporting:</strong> To generate reports and analytics for
+              Travel Agents about their business operations
+            </li>
+            <li>
+              <strong>Service Delivery:</strong> To facilitate Travel Agents'
+              delivery of personalized travel experiences to their customers
+            </li>
+          </ul>
+
+          <h2 id="data-sharing">Data Sharing and Disclosure</h2>
+
+          <h3>Current Data Sharing Practices</h3>
+          <p>
+            We currently do not share Personal Data with third parties except in
+            the following limited circumstances:
+          </p>
+
+          <p>
+            <strong>Service Providers:</strong> We may engage trusted
+            third-party service providers (such as AWS for hosting) who assist
+            in operating our Service. These providers are bound by
+            confidentiality agreements and data protection requirements.
+          </p>
+
+          <p>
+            <strong>Travel Agent Directed Sharing:</strong> Travel Agents may
+            use our Service to share traveler data with third parties (such as
+            hotels, airlines, or other travel service providers) to deliver
+            personalized travel experiences and fulfill booking requirements.
+            Such sharing is controlled entirely by the Travel Agent as the data
+            controller.
+          </p>
+
+          <p>
+            <strong>Legal Requirements:</strong> We may disclose Personal Data
+            when required by law, court order, or government request, or to
+            protect our legal rights and safety.
+          </p>
+
+          <p>
+            <strong>Business Transfers:</strong> In the event of a merger,
+            acquisition, or sale of assets, Personal Data may be transferred as
+            part of the transaction, subject to the same privacy protections.
+          </p>
+
+          <h3>Future Data Sharing</h3>
+          <p>
+            As our Service evolves, we may introduce additional features that
+            enable Travel Agents to share data with various travel service
+            providers and integrated platforms to enhance service delivery.
+          </p>
+
+          <h2 id="data-storage">Data Storage and Security</h2>
+
+          <h3>Data Location</h3>
+          <p>
+            Your data is primarily stored on Amazon Web Services (AWS) servers
+            located in the Mumbai region, India. Backup copies may be stored in
+            other AWS regions for disaster recovery purposes.
+          </p>
+
+          <h3>Security Measures</h3>
+          <p>We implement industry-standard security measures including:</p>
+          <ul>
+            <li>Encryption of data in transit and at rest</li>
+            <li>Access controls and authentication mechanisms</li>
+            <li>Regular security audits and monitoring</li>
+            <li>Secure backup and disaster recovery procedures</li>
+            <li>Employee training on data protection</li>
+          </ul>
+          <p>
+            However, no method of transmission or storage is 100% secure, and we
+            cannot guarantee absolute security.
+          </p>
+
+          <h2 id="data-rights">Your Data Rights</h2>
+
+          <h3>Access and Control</h3>
+          <p>You have the right to:</p>
+          <ul>
+            <li>Access your Personal Data that we hold</li>
+            <li>Correct inaccurate or incomplete information</li>
+            <li>
+              Request deletion of your Personal Data (subject to legal and
+              contractual obligations)
+            </li>
+            <li>Export your data in a portable format</li>
+            <li>
+              Restrict processing of your Personal Data in certain circumstances
+            </li>
+          </ul>
+
+          <div class="data-controller-box">
+            <h3>For Travel Agents Managing Traveler Data</h3>
+            <p>
+              <strong>YOU ARE THE DATA CONTROLLER:</strong> As a Travel Agent
+              using our Service, you are the data controller and owner of all
+              traveler personal data you process through our platform. You are
+              responsible for:
+            </p>
+            <ul>
+              <li>
+                <strong>Legal Compliance:</strong> Ensuring you have lawful
+                basis to collect and process traveler data
+              </li>
+              <li>
+                <strong>Traveler Consent:</strong> Obtaining necessary consents
+                and providing privacy notices to your customers
+              </li>
+              <li>
+                <strong>Data Accuracy:</strong> Maintaining accurate and
+                up-to-date customer information
+              </li>
+              <li>
+                <strong>Customer Rights:</strong> Handling all traveler requests
+                regarding their personal data (access, correction, deletion,
+                portability, etc.)
+              </li>
+              <li>
+                <strong>Data Security:</strong> Implementing appropriate
+                security measures for customer data access
+              </li>
+              <li>
+                <strong>Breach Notification:</strong> Notifying relevant
+                authorities and individuals of any data breaches as required by
+                law
+              </li>
+              <li>
+                <strong>Privacy Law Compliance:</strong> Meeting all applicable
+                privacy regulations for your data processing activities
+              </li>
+            </ul>
+            <p>
+              <strong>Zutrula's Role:</strong> We provide technology services to
+              help you manage your customer data but we do not control how you
+              collect, use, or share this data outside our platform.
+            </p>
+          </div>
+
+          <h3>Exercising Your Rights</h3>
+          <p>
+            To exercise your data rights, please contact us using the
+            information provided in the "Contact Us" section. We will respond to
+            your request within a reasonable timeframe as required by applicable
+            law.
+          </p>
+
+          <h2 id="data-retention">Data Retention</h2>
+
+          <p>
+            <strong>Travel Agent Data:</strong> We retain your account
+            information and business data for as long as your account remains
+            active, plus a reasonable period afterwards for legal and business
+            purposes.
+          </p>
+
+          <p>
+            <strong>Traveler Data:</strong> Traveler data is retained as
+            determined by Travel Agents who control their customer information.
+            Travel Agents can manage, update, or delete traveler data at any
+            time through the Service interface according to their business needs
+            and legal obligations.
+          </p>
+
+          <p>
+            <strong>Usage Data:</strong> Technical and usage data is typically
+            retained for shorter periods unless required for security, legal
+            compliance, or service improvement purposes.
+          </p>
+
+          <h2>Compliance with Indian Privacy Laws</h2>
+
+          <p>
+            We are committed to complying with applicable Indian privacy and
+            data protection laws, including:
+          </p>
+          <ul>
+            <li>The Information Technology Act, 2000</li>
+            <li>
+              The Information Technology (Reasonable Security Practices and
+              Procedures and Sensitive Personal Data or Information) Rules, 2011
+            </li>
+            <li>Any future data protection legislation enacted in India</li>
+          </ul>
+          <p>
+            We regularly review our practices to ensure ongoing compliance with
+            evolving legal requirements.
+          </p>
+
+          <h2 id="children-privacy">Children's Privacy</h2>
+
+          <h3>Direct Use of Service by Minors</h3>
+          <p>
+            Our Service is not intended for direct use by individuals under the
+            age of 18. However, since Travel Agencies control user account
+            creation, we cannot independently verify the age of all CRM users.
+            Travel Agencies are responsible for ensuring compliance with age
+            restrictions and applicable laws regarding minor employees or
+            contractors.
+          </p>
+
+          <h3>
+            Children's Travel Data Processed on Behalf of Parents/Guardians
+          </h3>
+          <p>
+            We recognize that in the travel industry, parents and legal
+            guardians frequently need to provide personal information about
+            their minor children for travel bookings and arrangements. We may
+            process children's personal data in the following circumstances:
+          </p>
+
+          <p>
+            <strong>Legitimate Travel Purposes:</strong> When parents or
+            guardians provide their children's information through Travel Agents
+            for:
+          </p>
+          <ul>
+            <li>Flight, hotel, and transportation bookings</li>
+            <li>Passport and visa processing</li>
+            <li>Travel insurance arrangements</li>
+            <li>Emergency contact information</li>
+            <li>Medical information relevant to travel</li>
+            <li>Age verification for pricing and services</li>
+          </ul>
+
+          <p>
+            <strong>Parental Responsibility:</strong> When processing children's
+            data:
+          </p>
+          <ul>
+            <li>
+              We rely on parents/guardians to provide accurate information
+            </li>
+            <li>
+              We require Travel Agents to ensure they have appropriate parental
+              consent
+            </li>
+            <li>
+              Parents/guardians retain the right to access, correct, or request
+              deletion of their children's data
+            </li>
+            <li>
+              We process children's data only for the specific travel purposes
+              provided
+            </li>
+          </ul>
+
+          <p>
+            <strong>Data Protection for Minors:</strong> We apply enhanced
+            protection measures for children's data:
+          </p>
+          <ul>
+            <li>
+              Limited data sharing (only as necessary for travel services)
+            </li>
+            <li>Restricted access within our system</li>
+            <li>
+              Data retention as controlled by Travel Agents (we do not
+              automatically delete data)
+            </li>
+            <li>
+              No marketing or promotional communications directed at minors
+            </li>
+          </ul>
+
+          <p><strong>Parental Rights:</strong> Parents and guardians can:</p>
+          <ul>
+            <li>Request access to their child's travel data</li>
+            <li>Correct inaccurate information about their child</li>
+            <li>
+              Request deletion of their child's data (subject to legal retention
+              requirements)
+            </li>
+            <li>
+              Withdraw consent for processing (where consent is the legal basis)
+            </li>
+          </ul>
+
+          <p>
+            If you are a parent or guardian and have concerns about your child's
+            personal information processed through our Service, please contact
+            us immediately using the information in the "Contact Us" section.
+          </p>
+
+          <h2>Changes to This Privacy Policy</h2>
+
+          <p>
+            We may update this Privacy Policy periodically to reflect changes in
+            our practices or legal requirements. When we make significant
+            changes, we will:
+          </p>
+          <ul>
+            <li>Post the updated Privacy Policy on our Website</li>
+            <li>Update the "Last updated" date</li>
+            <li>Notify users via email or through the Service interface</li>
+            <li>For material changes, we may require renewed consent</li>
+          </ul>
+          <p>
+            We encourage you to review this Privacy Policy periodically to stay
+            informed about how we protect your information.
+          </p>
+
+          <h2>International Data Transfers</h2>
+
+          <p>
+            While we primarily operate within India, some of our service
+            providers (such as AWS) may involve international data transfers for
+            backup and disaster recovery purposes. When such transfers occur, we
+            ensure appropriate safeguards are in place to protect your data.
+          </p>
+
+          <div class="contact-info" id="contact">
+            <h2>Contact Us</h2>
+            <p>
+              If you have any questions about this Privacy Policy, your data
+              rights, or our privacy practices, please contact us:
+            </p>
+            <div class="contact-details">
+              <p>
+                <strong>Zutrula</strong><br />
+                64/2, Chenniyavalasu, Perundurai - 638052<br />
+                Erode district, Tamil Nadu, India
+              </p>
+              <p>
+                <strong>Email:</strong>
+                zutrula.app@gmail.com<br />
+                <strong>Phone:</strong> +916374790439<br />
+                <strong>Website:</strong>
+                https://www.zutrula.com
+              </p>
+              <p>
+                For data protection inquiries, please include "Privacy Policy"
+                in your subject line and provide detailed information about your
+                request to help us respond effectively.
+              </p>
             </div>
+          </div>
+
+          <hr
+            style="
+              margin: 40px 0;
+              border: none;
+              border-top: 2px solid #667eea;
+              opacity: 0.3;
+            "
+          />
+          <p
+            style="
+              text-align: center;
+              color: #64748b;
+              font-style: italic;
+              margin-bottom: 0;
+            "
+          >
+            This Privacy Policy is effective as of the date last updated above
+            and applies to all users of the Zutrula Service.
+          </p>
         </div>
+      </div>
+    </div>
 
-        <footer>
-            <div class="container">
-                <p>
-                    &copy; 2025 Zutrula. All rights reserved. | Empowering
-                    Travel Agents Worldwide |
-                    <a href="privacy-policy.html">Privacy Policy</a>
-                </p>
-            </div>
-        </footer>
+    <footer>
+      <div class="container">
+        <p>
+          &copy; 2026 Zutrula. All rights reserved. | Empowering Travel Agents
+          Worldwide |
+          <a href="privacy-policy.html">Privacy Policy</a>
+        </p>
+      </div>
+    </footer>
 
-        <button class="back-to-top" id="backToTop">
-            <i class="fas fa-arrow-up"></i>
-        </button>
+    <button class="back-to-top" id="backToTop">
+      <i class="fas fa-arrow-up"></i>
+    </button>
 
-        <script>
-            // Smooth scrolling for navigation links
-            document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-                anchor.addEventListener("click", function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(
-                        this.getAttribute("href"),
-                    );
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: "smooth",
-                            block: "start",
-                        });
-                    }
-                });
+    <script>
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
             });
+          }
+        });
+      });
 
-            // Back to top button functionality
-            const backToTopButton = document.getElementById("backToTop");
+      // Back to top button functionality
+      const backToTopButton = document.getElementById("backToTop");
 
-            window.addEventListener("scroll", () => {
-                if (window.pageYOffset > 300) {
-                    backToTopButton.classList.add("visible");
-                } else {
-                    backToTopButton.classList.remove("visible");
-                }
-            });
+      window.addEventListener("scroll", () => {
+        if (window.pageYOffset > 300) {
+          backToTopButton.classList.add("visible");
+        } else {
+          backToTopButton.classList.remove("visible");
+        }
+      });
 
-            backToTopButton.addEventListener("click", () => {
-                window.scrollTo({
-                    top: 0,
-                    behavior: "smooth",
-                });
-            });
+      backToTopButton.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
 
-            // Scroll animations
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: "0px 0px -50px 0px",
-            };
+      // Scroll animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("visible");
-                    }
-                });
-            }, observerOptions);
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      }, observerOptions);
 
-            document.querySelectorAll(".fade-in").forEach((el) => {
-                observer.observe(el);
-            });
-        </script>
-    </body>
+      document.querySelectorAll(".fade-in").forEach((el) => {
+        observer.observe(el);
+      });
+    </script>
+  </body>
 </html>
