@@ -1,0 +1,410 @@
+
+    #zutrula-homepage-blueprint {
+      --zu-ink: #111a2e;
+      --zu-muted: #62708a;
+      --zu-line: #e5eaf2;
+      --zu-soft: #f7f9fc;
+      --zu-mint: #e9fbf8;
+      --zu-blue-soft: #eef2ff;
+      --zu-lilac: #f3efff;
+      --zu-teal: #16bca9;
+      --zu-blue: #5368ff;
+      --zu-purple: #8b62e8;
+      --zu-coral: #ff786b;
+      --zu-yellow: #ffc857;
+      color: var(--zu-ink);
+      background: #ffffff;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      width: 100%;
+      overflow: clip;
+      border-radius: 18px;
+      box-shadow: 0 20px 60px rgba(17, 26, 46, 0.10);
+    }
+
+    #zutrula-homepage-blueprint * { box-sizing: border-box; }
+    #zutrula-homepage-blueprint a { color: inherit; text-decoration: none; }
+    #zutrula-homepage-blueprint h1,
+    #zutrula-homepage-blueprint h2,
+    #zutrula-homepage-blueprint h3,
+    #zutrula-homepage-blueprint p { margin: 0; }
+
+    #zutrula-homepage-blueprint .zhp-shell { max-width: 1180px; margin: 0 auto; padding-left: 42px; padding-right: 42px; }
+    #zutrula-homepage-blueprint .zhp-nav { min-height: 74px; display: flex; align-items: center; justify-content: space-between; gap: 24px; border-bottom: 1px solid var(--zu-line); }
+    #zutrula-homepage-blueprint .zhp-logo { letter-spacing: .14em; font-weight: 500; font-size: 18px; }
+    #zutrula-homepage-blueprint .zhp-links { display: flex; align-items: center; gap: 26px; color: var(--zu-muted); font-size: 13px; }
+    #zutrula-homepage-blueprint .zhp-demo { padding: 11px 17px; border-radius: 10px; background: var(--zu-ink); color: #ffffff; font-weight: 500; }
+
+    #zutrula-homepage-blueprint .zhp-hero { position: relative; isolation: isolate; display: grid; grid-template-columns: 1fr; place-items: center; width: 100%; max-width: none; min-height: 620px; padding-top: 108px; padding-bottom: 102px; color: #ffffff; text-align: center; overflow: hidden; background: #17131e; }
+    #zutrula-homepage-blueprint .zhp-hero::before { content: ""; position: absolute; inset: 0; z-index: -2; background: radial-gradient(ellipse at 12% 22%, rgba(36,164,151,.23), transparent 36%), radial-gradient(ellipse at 88% 82%, rgba(93,81,180,.28), transparent 38%), linear-gradient(132deg, #15131b 0%, #272038 53%, #111620 100%); }
+    #zutrula-homepage-blueprint .zhp-hero::after { content: ""; position: absolute; inset: 0; z-index: -1; opacity: .28; pointer-events: none; background-image: repeating-linear-gradient(125deg, transparent 0 22px, rgba(255,255,255,.035) 23px 24px, transparent 25px 48px), radial-gradient(rgba(255,255,255,.18) .6px, transparent .8px); background-size: auto, 6px 6px; mask-image: linear-gradient(to bottom, transparent, #000 12%, #000 88%, transparent); }
+    #zutrula-homepage-blueprint .zhp-hero-ornaments { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; color: #5be1cf; }
+    #zutrula-homepage-blueprint .zhp-hero-object { position: absolute; width: var(--object-size, 58px); aspect-ratio: 1; opacity: .5; filter: drop-shadow(0 0 16px rgba(91,225,207,.68)); transform: rotate(var(--object-tilt, 0deg)); animation: zhp-object-drift var(--object-speed, 6s) ease-in-out var(--object-delay, 0s) infinite; }
+    #zutrula-homepage-blueprint .zhp-hero-object svg { display: block; width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    #zutrula-homepage-blueprint .zhp-hero-object::after { content: ""; position: absolute; left: 50%; top: calc(100% + 8px); width: 1px; height: 44px; border-left: 2px dashed currentColor; opacity: .45; transform: rotate(var(--trail-tilt, 0deg)); transform-origin: top; }
+    #zutrula-homepage-blueprint .zhp-object-1 { left: 4%; bottom: 14%; --object-size: 66px; --object-tilt: -12deg; --object-delay: -2s; }
+    #zutrula-homepage-blueprint .zhp-object-2 { left: 14%; bottom: 5%; --object-size: 48px; --object-tilt: 9deg; --object-speed: 6.4s; --object-delay: -5s; }
+    #zutrula-homepage-blueprint .zhp-object-3 { left: 22%; bottom: 21%; --object-size: 40px; --object-tilt: -5deg; --object-speed: 5.8s; --object-delay: -1s; }
+    #zutrula-homepage-blueprint .zhp-object-4 { right: 4%; bottom: 13%; --object-size: 62px; --object-tilt: 11deg; --object-speed: 6.7s; --object-delay: -4s; }
+    #zutrula-homepage-blueprint .zhp-object-5 { right: 14%; bottom: 4%; --object-size: 46px; --object-tilt: -8deg; --object-speed: 5.6s; --object-delay: -6s; }
+    #zutrula-homepage-blueprint .zhp-object-6 { right: 22%; bottom: 22%; --object-size: 42px; --object-tilt: 6deg; --object-speed: 7s; --object-delay: -3s; }
+    #zutrula-homepage-blueprint .zhp-object-2::after,
+    #zutrula-homepage-blueprint .zhp-object-3::after,
+    #zutrula-homepage-blueprint .zhp-object-5::after,
+    #zutrula-homepage-blueprint .zhp-object-6::after { display: none; }
+    @keyframes zhp-object-drift { 0%, 100% { translate: 0 2px; } 25% { translate: 5px -7px; } 50% { translate: -3px -17px; } 75% { translate: 4px -9px; } }
+    #zutrula-homepage-blueprint .zhp-hero > .zhp-reveal-copy { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; }
+    #zutrula-homepage-blueprint .zhp-eyebrow { color: var(--zu-teal); letter-spacing: .18em; text-transform: uppercase; font-size: 11px; font-weight: 500; margin-bottom: 18px; }
+    #zutrula-homepage-blueprint .zhp-hero .zhp-eyebrow { position: relative; isolation: isolate; display: inline-flex; flex-direction: column; align-items: center; justify-content: center; gap: .16em; max-width: 100%; color: #ffffff; letter-spacing: .035em; font-size: clamp(46px,5.6vw,66px); font-weight: 600; line-height: .96; margin-bottom: 32px; padding: .12em .18em; text-wrap: balance; text-shadow: 0 0 14px rgba(255,255,255,.48), 0 0 30px rgba(91,225,207,.42); }
+    #zutrula-homepage-blueprint .zhp-hero .zhp-eyebrow::before { content: ""; position: absolute; inset: -.62em -1.25em; z-index: -1; border-radius: 50%; background: radial-gradient(ellipse at center, rgba(22,188,169,.64) 0%, rgba(83,104,255,.38) 44%, rgba(139,98,232,.2) 62%, transparent 76%); filter: blur(13px); opacity: .96; pointer-events: none; }
+    #zutrula-homepage-blueprint .zhp-brand-name { color: #ffffff; }
+    #zutrula-homepage-blueprint .zhp-brand-system { color: #42cfb5; font-size: .72em; letter-spacing: .08em; }
+    #zutrula-homepage-blueprint .zhp-hero h1 { font-size: clamp(38px, 5.1vw, 70px); line-height: .98; letter-spacing: -.055em; font-weight: 500; max-width: 800px; }
+    #zutrula-homepage-blueprint .zhp-hero .headline-main { color: #f8fafc; }
+    #zutrula-homepage-blueprint .zhp-hero .headline-key { color: #f8fafc; }
+    #zutrula-homepage-blueprint .zhp-headline-line { display: block; }
+    #zutrula-homepage-blueprint .zhp-headline-teal { color: #42cfb5; }
+    #zutrula-homepage-blueprint .zhp-lede { margin-top: 25px; color: #c3c7d3; font-size: 16px; line-height: 1.6; max-width: 620px; }
+    #zutrula-homepage-blueprint .zhp-actions { display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 30px; }
+    #zutrula-homepage-blueprint .zhp-calendar-host button { padding: 13px 20px; border: 0; border-radius: 11px; background: var(--zu-teal) !important; color: #ffffff !important; font: inherit; font-size: 14px; font-weight: 500; box-shadow: 0 12px 26px rgba(22, 188, 169, .24); cursor: pointer; }
+    #zutrula-homepage-blueprint .zhp-secondary { padding: 12px 19px; border: 1px solid rgba(255,255,255,.32); border-radius: 11px; color: #ffffff; font-size: 14px; font-weight: 500; background: rgba(255,255,255,.06); }
+    #zutrula-homepage-blueprint .zhp-trust { margin-top: 24px; color: #aeb2c5; font-size: 11px; }
+
+    #zutrula-homepage-blueprint .zhp-product-scene { position: relative; min-height: 480px; border-radius: 28px; background: linear-gradient(145deg, #e8fbf8 0%, #eef2ff 45%, #fff3ed 100%); padding: 34px; overflow: hidden; }
+    #zutrula-homepage-blueprint .zhp-product-scene::before { content: ""; position: absolute; width: 230px; height: 230px; right: -75px; top: -55px; border-radius: 50%; background: rgba(255, 200, 87, .55); filter: blur(1px); }
+    #zutrula-homepage-blueprint .zhp-app-window { position: relative; z-index: 1; background: #ffffff; border: 1px solid rgba(17,26,46,.08); border-radius: 18px; box-shadow: 0 24px 50px rgba(48, 57, 98, .16); overflow: hidden; transform: rotate(-1deg); }
+    #zutrula-homepage-blueprint .zhp-app-top { height: 42px; padding: 0 16px; display: flex; align-items: center; gap: 6px; background: #151f36; color: #ffffff; font-size: 10px; }
+    #zutrula-homepage-blueprint .zhp-dot { width: 7px; height: 7px; border-radius: 50%; display: inline-block; }
+    #zutrula-homepage-blueprint .zhp-app-top span:last-child { margin-left: 7px; opacity: .62; }
+    #zutrula-homepage-blueprint .zhp-app-body { display: grid; grid-template-columns: 1.45fr .72fr; gap: 13px; padding: 16px; min-height: 300px; }
+    #zutrula-homepage-blueprint .zhp-panel { background: #f8fafc; border-radius: 12px; padding: 14px; }
+    #zutrula-homepage-blueprint .zhp-panel-label { color: #94a0b7; letter-spacing: .12em; text-transform: uppercase; font-size: 9px; margin-bottom: 10px; }
+    #zutrula-homepage-blueprint .zhp-trip-row { padding: 11px; border-radius: 9px; background: #ffffff; margin-top: 8px; border-left: 3px solid var(--zu-blue); box-shadow: 0 4px 12px rgba(17,26,46,.05); }
+    #zutrula-homepage-blueprint .zhp-trip-row:nth-of-type(3) { border-left-color: var(--zu-coral); }
+    #zutrula-homepage-blueprint .zhp-trip-row:nth-of-type(4) { border-left-color: var(--zu-teal); }
+    #zutrula-homepage-blueprint .zhp-trip-row strong { display: block; font-size: 11px; font-weight: 500; }
+    #zutrula-homepage-blueprint .zhp-trip-row small { display: block; margin-top: 3px; color: #8b96aa; font-size: 9px; }
+    #zutrula-homepage-blueprint .zhp-readiness { display: grid; gap: 10px; margin-top: 12px; }
+    #zutrula-homepage-blueprint .zhp-ready-line { display: flex; align-items: center; justify-content: space-between; font-size: 9px; color: #66738c; }
+    #zutrula-homepage-blueprint .zhp-check { color: #0c9f72; background: #dff8ef; padding: 3px 5px; border-radius: 5px; }
+    #zutrula-homepage-blueprint .zhp-float { position: absolute; z-index: 3; border-radius: 12px; background: #ffffff; box-shadow: 0 16px 32px rgba(17,26,46,.16); padding: 12px 14px; font-size: 10px; font-weight: 500; }
+    #zutrula-homepage-blueprint .zhp-float-one { left: 11px; bottom: 28px; border-left: 4px solid var(--zu-coral); }
+    #zutrula-homepage-blueprint .zhp-float-two { right: 12px; bottom: 74px; border-left: 4px solid var(--zu-teal); }
+
+    #zutrula-homepage-blueprint .zhp-proof-wrap { background: var(--zu-soft); border-top: 1px solid var(--zu-line); border-bottom: 1px solid var(--zu-line); }
+    #zutrula-homepage-blueprint .zhp-proof { display: grid; grid-template-columns: repeat(4, 1fr); }
+    #zutrula-homepage-blueprint .zhp-proof-item { padding: 28px 22px; border-right: 1px solid var(--zu-line); }
+    #zutrula-homepage-blueprint .zhp-proof-item:last-child { border-right: 0; }
+    #zutrula-homepage-blueprint .zhp-proof-value { display: block; font-size: 25px; line-height: 1; letter-spacing: -.03em; font-weight: 500; }
+    #zutrula-homepage-blueprint .zhp-proof-label { display: block; margin-top: 7px; color: var(--zu-muted); font-size: 10px; line-height: 1.4; }
+
+    #zutrula-homepage-blueprint .zhp-section { padding-top: 82px; padding-bottom: 82px; }
+    #zutrula-homepage-blueprint .zhp-centered { text-align: center; max-width: 720px; margin: 0 auto 40px; }
+    #zutrula-homepage-blueprint .zhp-centered h2,
+    #zutrula-homepage-blueprint .zhp-copy h2 { font-size: clamp(30px, 4vw, 48px); line-height: 1.05; letter-spacing: -.045em; font-weight: 500; }
+    #zutrula-homepage-blueprint #platform .zhp-eyebrow,
+    #zutrula-homepage-blueprint #group-tour-suite .zhp-eyebrow,
+    #zutrula-homepage-blueprint #itinerary-commerce .zhp-eyebrow { color: #087e70; font-size: 17px; font-weight: 700; letter-spacing: .14em; }
+    #zutrula-homepage-blueprint .zhp-centered p,
+    #zutrula-homepage-blueprint .zhp-copy p { margin-top: 16px; color: var(--zu-muted); font-size: 15px; line-height: 1.65; }
+    #zutrula-homepage-blueprint .zhp-products { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    #zutrula-homepage-blueprint .zhp-products[hidden] { display: none !important; }
+    #zutrula-homepage-blueprint .zhp-product { border: 1px solid var(--zu-line); border-radius: 20px; overflow: hidden; background: #ffffff; }
+    #zutrula-homepage-blueprint .zhp-product-visual { height: 230px; padding: 28px; display: flex; align-items: center; justify-content: center; }
+    #zutrula-homepage-blueprint .zhp-product:first-child .zhp-product-visual { background: linear-gradient(135deg, var(--zu-blue-soft), #e8fbf8); }
+    #zutrula-homepage-blueprint .zhp-product:nth-child(2) .zhp-product-visual { background: linear-gradient(135deg, #fff1ec, #fff8d7); }
+    #zutrula-homepage-blueprint .zhp-product:last-child .zhp-product-visual { background: linear-gradient(135deg, #eaf7ff, #f3efff); }
+    #zutrula-homepage-blueprint .zhp-mini-ui { width: 88%; background: #ffffff; border-radius: 13px; box-shadow: 0 16px 32px rgba(17,26,46,.13); padding: 14px; transform: rotate(-1.4deg); }
+    #zutrula-homepage-blueprint .zhp-product:nth-child(2) .zhp-mini-ui { transform: rotate(1.4deg); }
+    #zutrula-homepage-blueprint .zhp-product:last-child .zhp-mini-ui { transform: rotate(-.8deg); }
+    #zutrula-homepage-blueprint .zhp-mini-head { height: 9px; width: 42%; background: #d8deea; border-radius: 5px; }
+    #zutrula-homepage-blueprint .zhp-mini-line { height: 30px; margin-top: 9px; border-radius: 8px; background: #f3f6fb; border-left: 4px solid var(--zu-purple); }
+    #zutrula-homepage-blueprint .zhp-mini-line:nth-child(3) { border-left-color: var(--zu-teal); }
+    #zutrula-homepage-blueprint .zhp-mini-line:nth-child(4) { border-left-color: var(--zu-coral); }
+    #zutrula-homepage-blueprint .zhp-product-body { padding: 25px 27px 29px; }
+    #zutrula-homepage-blueprint .zhp-product-body h3 { font-size: 22px; font-weight: 500; }
+    #zutrula-homepage-blueprint .zhp-product-sub { margin-top: 7px; color: var(--zu-ink); font-size: 14px; font-weight: 500; }
+    #zutrula-homepage-blueprint .zhp-product-body p { margin-top: 10px; color: var(--zu-muted); font-size: 13px; line-height: 1.6; }
+    #zutrula-homepage-blueprint .zhp-text-link { display: inline-block; margin-top: 17px; color: var(--zu-blue); font-size: 13px; font-weight: 500; }
+
+    #zutrula-homepage-blueprint .zhp-tinted { background: var(--zu-mint); }
+    #zutrula-homepage-blueprint .zhp-tinted-blue { background: var(--zu-blue-soft); }
+    #zutrula-homepage-blueprint .zhp-feature { display: grid; grid-template-columns: .92fr 1.08fr; gap: 64px; align-items: center; }
+    #zutrula-homepage-blueprint .zhp-feature.reverse { grid-template-columns: 1.08fr .92fr; }
+    #zutrula-homepage-blueprint .zhp-feature.reverse .zhp-copy { order: 2; }
+    #zutrula-homepage-blueprint .zhp-feature.reverse .zhp-feature-visual { order: 1; }
+    #zutrula-homepage-blueprint .zhp-bullets { margin: 22px 0 0; padding: 0; list-style: none; display: grid; gap: 11px; }
+    #zutrula-homepage-blueprint .zhp-bullets li { display: flex; gap: 10px; align-items: flex-start; color: var(--zu-ink); font-size: 13px; }
+    #zutrula-homepage-blueprint .zhp-bullet-check { width: 19px; height: 19px; flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; background: #d8f7ee; color: #0a926a; font-size: 11px; }
+    #zutrula-homepage-blueprint .zhp-feature-visual { min-height: 360px; display: flex; align-items: center; justify-content: center; position: relative; }
+    #zutrula-homepage-blueprint .zhp-requirement-ui { width: 100%; background: #ffffff; border: 1px solid rgba(17,26,46,.07); border-radius: 18px; box-shadow: 0 22px 44px rgba(17,26,46,.11); padding: 22px; }
+    #zutrula-homepage-blueprint .zhp-requirement-title { font-size: 12px; font-weight: 500; }
+    #zutrula-homepage-blueprint .zhp-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 17px; }
+    #zutrula-homepage-blueprint .zhp-chip { padding: 8px 10px; border-radius: 8px; background: #f3f6fb; color: #526077; font-size: 10px; }
+    #zutrula-homepage-blueprint .zhp-chip:nth-child(1),
+    #zutrula-homepage-blueprint .zhp-chip:nth-child(5) { background: #e7f9f5; color: #087e70; }
+    #zutrula-homepage-blueprint .zhp-chip:nth-child(2),
+    #zutrula-homepage-blueprint .zhp-chip:nth-child(7) { background: #eceeff; color: #4454c6; }
+    #zutrula-homepage-blueprint .zhp-chip:nth-child(3) { background: #fff0eb; color: #c65348; }
+    #zutrula-homepage-blueprint .zhp-form-lines { margin-top: 21px; display: grid; grid-template-columns: 1fr 1fr; gap: 11px; }
+    #zutrula-homepage-blueprint .zhp-form-line { height: 38px; background: #f6f8fb; border-radius: 8px; }
+    #zutrula-homepage-blueprint .zhp-form-line.wide { grid-column: 1 / -1; }
+
+    #zutrula-homepage-blueprint .zhp-enquiry-ui { width: 100%; background: #ffffff; border-radius: 18px; box-shadow: 0 22px 44px rgba(52,62,118,.13); padding: 22px; }
+    #zutrula-homepage-blueprint .zhp-source-row { display: flex; gap: 8px; flex-wrap: wrap; }
+    #zutrula-homepage-blueprint .zhp-source { padding: 7px 9px; border-radius: 7px; background: #e8fbf8; color: #087e70; font-size: 9px; }
+    #zutrula-homepage-blueprint .zhp-source:nth-child(2) { background: #eceeff; color: #4454c6; }
+    #zutrula-homepage-blueprint .zhp-source:nth-child(3) { background: #fff0eb; color: #c65348; }
+    #zutrula-homepage-blueprint .zhp-enquiry-record { margin-top: 15px; border: 1px solid var(--zu-line); border-radius: 11px; padding: 13px; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+    #zutrula-homepage-blueprint .zhp-enquiry-record strong { font-size: 11px; font-weight: 500; }
+    #zutrula-homepage-blueprint .zhp-enquiry-record small { display: block; margin-top: 3px; color: #8b96aa; font-size: 9px; }
+    #zutrula-homepage-blueprint .zhp-match { padding: 6px 8px; border-radius: 7px; background: #fff5d7; color: #9b6811; font-size: 9px; white-space: nowrap; }
+    #zutrula-homepage-blueprint .zhp-product-carousel { width: 105%; margin-left: -5%; }
+    #zutrula-homepage-blueprint .zhp-product-carousel-viewport { position: relative; aspect-ratio: 1.9; border: 1px solid rgba(17,26,46,.08); border-radius: 20px; background: rgba(255,255,255,.92); box-shadow: 0 24px 54px rgba(38,52,96,.18); overflow: hidden; }
+    #zutrula-homepage-blueprint .zhp-product-carousel--captain .zhp-product-carousel-viewport { aspect-ratio: 1.55; }
+    #zutrula-homepage-blueprint .zhp-product-carousel--mobile { width: 100%; margin-left: 0; }
+    #zutrula-homepage-blueprint .zhp-product-carousel--mobile .zhp-product-carousel-viewport { width: min(100%, 360px); height: 540px; aspect-ratio: auto; margin: 0 auto; border: 0; background: transparent; box-shadow: none; }
+    #zutrula-homepage-blueprint .zhp-product-carousel--mobile .zhp-product-slide { padding: 0; }
+    #zutrula-homepage-blueprint .zhp-product-carousel--mobile .zhp-product-slide img { width: auto; max-width: 100%; height: 100%; margin: 0 auto; object-fit: contain; border-radius: 18px; }
+    #zutrula-homepage-blueprint .zhp-product-slide { position: absolute; inset: 0; margin: 0; padding: 9px; opacity: 0; visibility: hidden; transition: opacity .45s ease, visibility .45s ease; }
+    #zutrula-homepage-blueprint .zhp-product-slide.is-active { opacity: 1; visibility: visible; }
+    #zutrula-homepage-blueprint .zhp-product-slide img { display: block; width: 100%; height: 100%; object-fit: contain; border-radius: 13px; }
+    #zutrula-homepage-blueprint .zhp-product-carousel--captain .zhp-product-slide--crop img { object-fit: cover; object-position: top center; }
+    #zutrula-homepage-blueprint .zhp-product-carousel-controls { display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 14px; }
+    #zutrula-homepage-blueprint .zhp-product-carousel-arrow { width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid rgba(17,26,46,.13); border-radius: 50%; background: #ffffff; color: var(--zu-ink); cursor: pointer; font: inherit; }
+    #zutrula-homepage-blueprint .zhp-product-carousel-dots { display: flex; align-items: center; gap: 7px; }
+    #zutrula-homepage-blueprint .zhp-product-carousel-dot { width: 8px; height: 8px; padding: 0; border: 0; border-radius: 50%; background: #bdc6d8; cursor: pointer; }
+    #zutrula-homepage-blueprint .zhp-product-carousel-dot[aria-current="true"] { width: 22px; border-radius: 999px; background: var(--zu-teal); }
+
+    #zutrula-homepage-blueprint .zhp-scroll-section { position: relative; background: #ffffff; }
+    #zutrula-homepage-blueprint .zhp-scroll-story { position: relative; height: 4100px; }
+    #zutrula-homepage-blueprint .zhp-scroll-sticky { position: sticky; top: 0; min-height: 820px; display: flex; align-items: center; overflow: hidden; background: #ffffff; }
+    #zutrula-homepage-blueprint .zhp-scroll-inner { width: 100%; padding-top: 42px; padding-bottom: 42px; }
+    #zutrula-homepage-blueprint .zhp-grid-title { max-width: 740px; margin: 0 0 34px; }
+    #zutrula-homepage-blueprint .zhp-grid-title h2 { font-size: clamp(30px, 4vw, 48px); line-height: 1.05; letter-spacing: -.045em; font-weight: 500; }
+    #zutrula-homepage-blueprint .zhp-grid-title p { margin-top: 14px; color: var(--zu-muted); font-size: 15px; line-height: 1.6; }
+    #zutrula-homepage-blueprint .zhp-scroll-hint { display: inline-flex; align-items: center; gap: 8px; margin-top: 15px; color: var(--zu-muted); font-size: 10px; }
+    #zutrula-homepage-blueprint .zhp-scroll-hint::before { content: ""; width: 26px; height: 1px; background: var(--zu-teal); }
+    #zutrula-homepage-blueprint .zhp-story { display: grid; grid-template-columns: .8fr 1.2fr; gap: 46px; align-items: stretch; }
+    #zutrula-homepage-blueprint .zhp-story-nav { position: relative; display: grid; align-content: start; }
+    #zutrula-homepage-blueprint .zhp-story-nav::before { content: ""; position: absolute; left: 17px; top: 24px; bottom: 24px; width: 1px; background: var(--zu-line); }
+    #zutrula-homepage-blueprint .zhp-story-step { position: relative; min-height: 78px; display: grid; grid-template-columns: 35px 1fr; align-items: center; gap: 14px; padding: 10px 12px 10px 0; border: 0; background: transparent; color: var(--zu-muted); text-align: left; cursor: pointer; font: inherit; }
+    #zutrula-homepage-blueprint .zhp-step-dot { position: relative; z-index: 1; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: #ffffff; border: 1px solid var(--zu-line); color: #919db1; font-size: 9px; transition: transform .3s ease, background .3s ease, color .3s ease, box-shadow .3s ease; }
+    #zutrula-homepage-blueprint .zhp-step-copy { display: block; padding: 8px 12px; border-radius: 12px; transition: background .3s ease, transform .3s ease; }
+    #zutrula-homepage-blueprint .zhp-step-copy strong { display: block; color: var(--zu-ink); font-size: 14px; font-weight: 500; }
+    #zutrula-homepage-blueprint .zhp-step-copy small { display: block; max-height: 0; margin-top: 0; overflow: hidden; opacity: 0; color: var(--zu-muted); font-size: 10px; line-height: 1.5; transition: max-height .3s ease, opacity .3s ease, margin .3s ease; }
+    #zutrula-homepage-blueprint .zhp-story-step[aria-pressed="true"] .zhp-step-dot { transform: scale(1.08); background: var(--zu-active, var(--zu-teal)); color: #ffffff; border-color: transparent; box-shadow: 0 9px 20px color-mix(in srgb, var(--zu-active, var(--zu-teal)) 28%, transparent); }
+    #zutrula-homepage-blueprint .zhp-story-step[aria-pressed="true"] .zhp-step-copy { background: #f7f9fc; transform: translateX(4px); }
+    #zutrula-homepage-blueprint .zhp-story-step[aria-pressed="true"] .zhp-step-copy small { max-height: 48px; margin-top: 5px; opacity: 1; }
+
+    #zutrula-homepage-blueprint .zhp-story-stage { --zu-active: var(--zu-teal); position: relative; min-height: 565px; padding: 32px; border-radius: 28px; overflow: hidden; opacity: .72; transform: scale(.965); background: linear-gradient(145deg, color-mix(in srgb, var(--zu-active) 17%, #ffffff), #f8faff 55%, #fff6ef); transition: background .45s ease, opacity .65s ease, transform .65s cubic-bezier(.2,.8,.2,1); }
+    #zutrula-homepage-blueprint .zhp-scroll-section.is-in-view .zhp-story-stage { opacity: 1; transform: scale(1); }
+    #zutrula-homepage-blueprint .zhp-story-orb { position: absolute; border-radius: 50%; filter: blur(2px); pointer-events: none; }
+    #zutrula-homepage-blueprint .zhp-story-orb.one { width: 170px; height: 170px; right: -42px; top: -48px; background: color-mix(in srgb, var(--zu-active) 33%, transparent); }
+    #zutrula-homepage-blueprint .zhp-story-orb.two { width: 110px; height: 110px; left: -30px; bottom: 35px; background: rgba(255, 200, 87, .35); }
+    #zutrula-homepage-blueprint .zhp-story-window { position: relative; z-index: 1; height: 100%; min-height: 500px; display: flex; flex-direction: column; overflow: hidden; border-radius: 19px; background: #ffffff; box-shadow: 0 28px 60px rgba(39, 49, 89, .16); transition: opacity .18s ease, transform .28s ease; }
+    #zutrula-homepage-blueprint .zhp-story-window.is-switching { opacity: .18; transform: translateX(-14px) scale(.99); }
+    #zutrula-homepage-blueprint .zhp-story-chrome { height: 48px; flex: 0 0 auto; display: flex; align-items: center; gap: 7px; padding: 0 18px; background: #121c31; color: #aab6ca; font-size: 9px; }
+    #zutrula-homepage-blueprint .zhp-story-chrome .zhp-dot:last-of-type { margin-right: 7px; }
+    #zutrula-homepage-blueprint .zhp-story-canvas { flex: 1; display: grid; grid-template-columns: 1.1fr .9fr; gap: 18px; padding: 25px; }
+    #zutrula-homepage-blueprint .zhp-story-main { display: flex; flex-direction: column; }
+    #zutrula-homepage-blueprint .zhp-story-kicker { color: var(--zu-active); letter-spacing: .14em; text-transform: uppercase; font-size: 9px; font-weight: 500; }
+    #zutrula-homepage-blueprint .zhp-story-heading { margin-top: 11px; font-size: 23px; line-height: 1.12; letter-spacing: -.025em; font-weight: 500; }
+    #zutrula-homepage-blueprint .zhp-story-description { margin-top: 10px; color: var(--zu-muted); font-size: 11px; line-height: 1.55; }
+    #zutrula-homepage-blueprint .zhp-story-rows { display: grid; gap: 9px; margin-top: 23px; }
+    #zutrula-homepage-blueprint .zhp-story-row { display: grid; grid-template-columns: 28px 1fr auto; gap: 10px; align-items: center; padding: 11px; border-radius: 10px; background: #f6f8fc; color: #536079; font-size: 10px; transition: transform .35s ease; }
+    #zutrula-homepage-blueprint .zhp-story-row:nth-child(2) { transform: translateX(8px); }
+    #zutrula-homepage-blueprint .zhp-story-row:nth-child(3) { transform: translateX(16px); }
+    #zutrula-homepage-blueprint .zhp-story-row-icon { width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; border-radius: 8px; background: color-mix(in srgb, var(--zu-active) 16%, #ffffff); color: var(--zu-active); font-size: 12px; }
+    #zutrula-homepage-blueprint .zhp-story-row-status { color: var(--zu-active); font-size: 9px; font-weight: 500; white-space: nowrap; }
+    #zutrula-homepage-blueprint .zhp-story-side { display: flex; flex-direction: column; gap: 12px; }
+    #zutrula-homepage-blueprint .zhp-story-spotlight { padding: 16px; border-radius: 13px; color: #ffffff; background: linear-gradient(135deg, #151f36, color-mix(in srgb, var(--zu-active) 62%, #151f36)); }
+    #zutrula-homepage-blueprint .zhp-story-spotlight-label { color: rgba(255,255,255,.66); font-size: 8px; letter-spacing: .11em; text-transform: uppercase; }
+    #zutrula-homepage-blueprint .zhp-story-spotlight-value { margin-top: 9px; font-size: 22px; line-height: 1.05; font-weight: 500; }
+    #zutrula-homepage-blueprint .zhp-story-spotlight-copy { margin-top: 8px; color: rgba(255,255,255,.74); font-size: 9px; line-height: 1.45; }
+    #zutrula-homepage-blueprint .zhp-story-mini { flex: 1; min-height: 185px; position: relative; overflow: hidden; padding: 15px; border-radius: 13px; background: #f6f8fc; }
+    #zutrula-homepage-blueprint .zhp-story-mini-label { color: #9aa5b8; font-size: 8px; letter-spacing: .1em; text-transform: uppercase; }
+    #zutrula-homepage-blueprint .zhp-story-bars { position: absolute; left: 15px; right: 15px; bottom: 18px; height: 105px; display: flex; align-items: end; gap: 8px; }
+    #zutrula-homepage-blueprint .zhp-story-bar { flex: 1; border-radius: 7px 7px 3px 3px; background: color-mix(in srgb, var(--zu-active) 70%, #ffffff); transform-origin: bottom; animation: zhp-bar-rise .6s ease both; }
+    #zutrula-homepage-blueprint .zhp-story-bar:nth-child(1) { height: 42%; }
+    #zutrula-homepage-blueprint .zhp-story-bar:nth-child(2) { height: 70%; animation-delay: .07s; }
+    #zutrula-homepage-blueprint .zhp-story-bar:nth-child(3) { height: 55%; animation-delay: .14s; }
+    #zutrula-homepage-blueprint .zhp-story-bar:nth-child(4) { height: 87%; animation-delay: .21s; }
+    #zutrula-homepage-blueprint .zhp-story-progress { position: absolute; left: 32px; right: 32px; bottom: 15px; height: 3px; border-radius: 3px; background: rgba(255,255,255,.55); overflow: hidden; }
+    #zutrula-homepage-blueprint .zhp-story-progress span { display: block; width: 16.666%; height: 100%; border-radius: inherit; background: var(--zu-active); transition: width .42s ease, background .42s ease; }
+    #zutrula-homepage-blueprint .zhp-story-counter { position: absolute; z-index: 3; top: 15px; right: 20px; padding: 6px 9px; border-radius: 999px; background: rgba(255,255,255,.78); color: var(--zu-muted); font-size: 9px; font-weight: 500; backdrop-filter: blur(8px); }
+    #zutrula-homepage-blueprint .zhp-story-counter span { color: var(--zu-active); }
+
+    @keyframes zhp-bar-rise { from { transform: scaleY(.15); opacity: .3; } to { transform: scaleY(1); opacity: 1; } }
+
+    #zutrula-homepage-blueprint .zhp-scale { display: grid; grid-template-columns: 1.15fr .85fr; gap: 70px; align-items: center; padding-top: 92px; padding-bottom: 92px; border-top: 1px solid var(--zu-line); }
+    #zutrula-homepage-blueprint .zhp-scale h2 { font-size: clamp(32px, 4.4vw, 54px); line-height: 1.04; letter-spacing: -.05em; font-weight: 500; }
+    #zutrula-homepage-blueprint .zhp-scale-copy { margin-top: 18px; max-width: 620px; color: var(--zu-muted); font-size: 15px; line-height: 1.65; }
+    #zutrula-homepage-blueprint .zhp-scale-path { position: relative; display: grid; gap: 15px; padding-left: 35px; }
+    #zutrula-homepage-blueprint .zhp-scale-path::before { content: ""; position: absolute; left: 12px; top: 22px; bottom: 22px; width: 2px; background: linear-gradient(var(--zu-teal), var(--zu-blue), var(--zu-purple)); }
+    #zutrula-homepage-blueprint .zhp-scale-node { position: relative; min-height: 58px; display: flex; align-items: center; padding: 13px 16px; border-radius: 14px; background: var(--zu-soft); color: var(--zu-ink); font-size: 12px; font-weight: 500; }
+    #zutrula-homepage-blueprint .zhp-scale-node::before { content: ""; position: absolute; left: -30px; width: 14px; height: 14px; border-radius: 50%; background: var(--zu-teal); box-shadow: 0 0 0 6px #ffffff; }
+    #zutrula-homepage-blueprint .zhp-scale-node:nth-child(2) { transform: translateX(16px); background: var(--zu-blue-soft); }
+    #zutrula-homepage-blueprint .zhp-scale-node:nth-child(2)::before { background: var(--zu-blue); }
+    #zutrula-homepage-blueprint .zhp-scale-node:nth-child(3) { transform: translateX(32px); background: var(--zu-lilac); }
+    #zutrula-homepage-blueprint .zhp-scale-node:nth-child(3)::before { background: var(--zu-purple); }
+
+    #zutrula-homepage-blueprint .zhp-final { margin: 0 42px 42px; padding: 54px; border-radius: 24px; color: #ffffff; background: linear-gradient(125deg, #111a2e 0%, #173a45 100%); display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+    #zutrula-homepage-blueprint .zhp-final h2 { font-size: clamp(29px, 4vw, 44px); line-height: 1.05; letter-spacing: -.04em; font-weight: 500; max-width: 650px; }
+    #zutrula-homepage-blueprint .zhp-final p { margin-top: 12px; color: #b9c6d8; font-size: 14px; }
+    #zutrula-homepage-blueprint .zhp-final .zhp-calendar-host { flex: 0 0 auto; }
+    #zutrula-homepage-blueprint .zhp-final .zhp-calendar-host button { padding: 14px 20px; }
+    #zutrula-homepage-blueprint .zhp-footer { padding-bottom: 36px; display: flex; justify-content: space-between; gap: 20px; color: var(--zu-muted); font-size: 11px; }
+
+    #zutrula-homepage-blueprint.zhp-motion-ready .zhp-reveal-copy > * {
+      opacity: 0;
+      transform: translate3d(0, 12px, 0);
+      transition: opacity .62s ease, transform .68s cubic-bezier(.2, .8, .2, 1);
+      transition-delay: var(--zhp-reveal-delay, 0ms);
+    }
+    #zutrula-homepage-blueprint.zhp-motion-ready .zhp-reveal-copy.is-visible > * {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+    #zutrula-homepage-blueprint.zhp-motion-ready .zhp-reveal-visual {
+      opacity: 0;
+      transform: translate3d(14px, 5px, 0) scale(.985);
+      transition: opacity .68s ease, transform .74s cubic-bezier(.2, .8, .2, 1);
+    }
+    #zutrula-homepage-blueprint.zhp-motion-ready .zhp-reveal-visual.from-left {
+      transform: translate3d(-14px, 5px, 0) scale(.985);
+    }
+    #zutrula-homepage-blueprint.zhp-motion-ready .zhp-reveal-visual.is-visible,
+    #zutrula-homepage-blueprint.zhp-motion-ready .zhp-reveal-visual.from-left.is-visible {
+      opacity: 1;
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+    #zutrula-homepage-blueprint.zhp-motion-ready .zhp-reveal-group > * {
+      opacity: 0;
+      transform: translate3d(0, 10px, 0);
+      transition: opacity .58s ease, transform .66s cubic-bezier(.2, .8, .2, 1);
+      transition-delay: var(--zhp-reveal-delay, 0ms);
+    }
+    #zutrula-homepage-blueprint.zhp-motion-ready .zhp-reveal-group.is-visible > * {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+
+    @media (max-width: 900px) {
+      #zutrula-homepage-blueprint .zhp-shell { padding-left: 28px; padding-right: 28px; }
+      #zutrula-homepage-blueprint .zhp-links a:not(.zhp-demo) { display: none; }
+      #zutrula-homepage-blueprint .zhp-hero,
+      #zutrula-homepage-blueprint .zhp-feature,
+      #zutrula-homepage-blueprint .zhp-feature.reverse { grid-template-columns: 1fr; }
+      #zutrula-homepage-blueprint .zhp-feature.reverse .zhp-copy,
+      #zutrula-homepage-blueprint .zhp-feature.reverse .zhp-feature-visual { order: initial; }
+      #zutrula-homepage-blueprint .zhp-product-carousel { width: 100%; margin-left: 0; }
+      #zutrula-homepage-blueprint .zhp-hero { gap: 42px; padding-top: 60px; }
+      #zutrula-homepage-blueprint .zhp-hero > .zhp-reveal-copy { width: 100%; }
+      #zutrula-homepage-blueprint .zhp-hero-object { opacity: .34; scale: .78; }
+      #zutrula-homepage-blueprint .zhp-object-1 { left: 2%; bottom: 7%; }
+      #zutrula-homepage-blueprint .zhp-object-2 { left: 14%; bottom: 2%; }
+      #zutrula-homepage-blueprint .zhp-object-3 { left: 4%; bottom: 24%; }
+      #zutrula-homepage-blueprint .zhp-object-4 { right: 2%; bottom: 7%; }
+      #zutrula-homepage-blueprint .zhp-object-5 { right: 14%; bottom: 2%; }
+      #zutrula-homepage-blueprint .zhp-object-6 { right: 4%; bottom: 24%; }
+      #zutrula-homepage-blueprint .zhp-hero .zhp-eyebrow { font-size: clamp(36px, 5vw, 44px); }
+      #zutrula-homepage-blueprint .zhp-hero h1 { max-width: 100%; font-size: clamp(34px, 4.8vw, 44px); }
+      #zutrula-homepage-blueprint .zhp-lede,
+      #zutrula-homepage-blueprint .zhp-trust { max-width: 100%; overflow-wrap: anywhere; }
+      #zutrula-homepage-blueprint .zhp-product-scene { min-height: 430px; }
+      #zutrula-homepage-blueprint .zhp-proof { grid-template-columns: 1fr 1fr; }
+      #zutrula-homepage-blueprint .zhp-proof-item:nth-child(2) { border-right: 0; }
+      #zutrula-homepage-blueprint .zhp-proof-item:nth-child(-n+2) { border-bottom: 1px solid var(--zu-line); }
+      #zutrula-homepage-blueprint .zhp-scroll-sticky { min-height: 820px; }
+      #zutrula-homepage-blueprint .zhp-scroll-inner { padding-top: 32px; padding-bottom: 32px; }
+      #zutrula-homepage-blueprint .zhp-grid-title { margin-bottom: 20px; }
+      #zutrula-homepage-blueprint .zhp-grid-title p { margin-top: 10px; }
+      #zutrula-homepage-blueprint .zhp-story { grid-template-columns: 1fr; gap: 18px; }
+      #zutrula-homepage-blueprint .zhp-story-nav { grid-template-columns: repeat(6, 1fr); gap: 5px; }
+      #zutrula-homepage-blueprint .zhp-story-nav::before { display: none; }
+      #zutrula-homepage-blueprint .zhp-story-step { min-height: 44px; display: flex; justify-content: center; padding: 4px; }
+      #zutrula-homepage-blueprint .zhp-step-dot { width: 32px; height: 32px; }
+      #zutrula-homepage-blueprint .zhp-step-copy { display: none; }
+      #zutrula-homepage-blueprint .zhp-story-step[aria-pressed="true"] .zhp-step-copy { transform: none; }
+      #zutrula-homepage-blueprint .zhp-story-stage { min-height: 500px; padding: 24px; }
+      #zutrula-homepage-blueprint .zhp-story-window { min-height: 452px; }
+      #zutrula-homepage-blueprint .zhp-scale { grid-template-columns: 1fr; gap: 40px; }
+      #zutrula-homepage-blueprint .zhp-scale-path { max-width: 560px; }
+      #zutrula-homepage-blueprint .zhp-final { margin-left: 28px; margin-right: 28px; padding: 38px; }
+    }
+
+    @media (max-width: 560px) {
+      #zutrula-homepage-blueprint { border-radius: 0; }
+      #zutrula-homepage-blueprint .zhp-shell { padding-left: 20px; padding-right: 20px; }
+      #zutrula-homepage-blueprint .zhp-nav { min-height: 64px; }
+      #zutrula-homepage-blueprint .zhp-hero { padding-top: 48px; padding-bottom: 52px; }
+      #zutrula-homepage-blueprint .zhp-hero .zhp-eyebrow { flex-direction: column; align-items: center; gap: .16em; font-size: clamp(32px, 9.2vw, 42px); letter-spacing: .025em; line-height: 1; }
+      #zutrula-homepage-blueprint .zhp-brand-system { font-size: .72em; }
+      #zutrula-homepage-blueprint .zhp-hero .zhp-eyebrow::before { inset: -.52em -.75em; filter: blur(10px); }
+      #zutrula-homepage-blueprint #platform .zhp-section,
+      #zutrula-homepage-blueprint #group-tour-suite .zhp-section,
+      #zutrula-homepage-blueprint #itinerary-commerce .zhp-section { padding: 36px 16px; }
+      #zutrula-homepage-blueprint #platform .zhp-feature,
+      #zutrula-homepage-blueprint #group-tour-suite .zhp-feature,
+      #zutrula-homepage-blueprint #itinerary-commerce .zhp-feature { gap: 24px; }
+      #zutrula-homepage-blueprint #platform .zhp-requirement-ui,
+      #zutrula-homepage-blueprint #itinerary-commerce .zhp-requirement-ui { padding: 14px; border-radius: 15px; }
+      #zutrula-homepage-blueprint #group-tour-suite .zhp-product-carousel-viewport { border-radius: 15px; }
+      #zutrula-homepage-blueprint #group-tour-suite .zhp-product-slide { padding: 4px; }
+      #zutrula-homepage-blueprint #group-tour-suite .zhp-product-slide img { border-radius: 11px; }
+      #zutrula-homepage-blueprint .zhp-product-carousel--mobile .zhp-product-carousel-viewport { height: 460px; }
+      #zutrula-homepage-blueprint .zhp-actions { align-items: stretch; flex-direction: column; }
+      #zutrula-homepage-blueprint .zhp-calendar-host,
+      #zutrula-homepage-blueprint .zhp-calendar-host button,
+      #zutrula-homepage-blueprint .zhp-secondary { text-align: center; }
+      #zutrula-homepage-blueprint .zhp-product-scene { min-height: 380px; padding: 20px; }
+      #zutrula-homepage-blueprint .zhp-app-body { grid-template-columns: 1fr; }
+      #zutrula-homepage-blueprint .zhp-app-body .zhp-panel:last-child { display: none; }
+      #zutrula-homepage-blueprint .zhp-float-two { bottom: 24px; }
+      #zutrula-homepage-blueprint .zhp-float-one { display: none; }
+      #zutrula-homepage-blueprint .zhp-proof { grid-template-columns: 1fr; }
+      #zutrula-homepage-blueprint .zhp-proof-item { border-right: 0; border-bottom: 1px solid var(--zu-line); }
+      #zutrula-homepage-blueprint .zhp-proof-item:last-child { border-bottom: 0; }
+      #zutrula-homepage-blueprint .zhp-section { padding-top: 62px; padding-bottom: 62px; }
+      #zutrula-homepage-blueprint .zhp-products { grid-template-columns: 1fr; }
+      #zutrula-homepage-blueprint .zhp-scroll-story { height: 3600px; }
+      #zutrula-homepage-blueprint .zhp-scroll-sticky { min-height: 760px; align-items: flex-start; }
+      #zutrula-homepage-blueprint .zhp-scroll-inner { padding-top: 24px; padding-bottom: 24px; }
+      #zutrula-homepage-blueprint .zhp-grid-title { margin-bottom: 16px; }
+      #zutrula-homepage-blueprint .zhp-grid-title p { margin-top: 10px; font-size: 13px; }
+      #zutrula-homepage-blueprint .zhp-scroll-hint { margin-top: 10px; }
+      #zutrula-homepage-blueprint .zhp-story-stage { min-height: 448px; padding: 16px; border-radius: 21px; }
+      #zutrula-homepage-blueprint .zhp-story-window { min-height: 414px; }
+      #zutrula-homepage-blueprint .zhp-story-canvas { grid-template-columns: 1fr; padding: 16px; }
+      #zutrula-homepage-blueprint .zhp-story-description { margin-top: 7px; }
+      #zutrula-homepage-blueprint .zhp-story-rows { margin-top: 14px; gap: 7px; }
+      #zutrula-homepage-blueprint .zhp-story-row { padding: 8px; }
+      #zutrula-homepage-blueprint .zhp-story-side { display: none; }
+      #zutrula-homepage-blueprint .zhp-story-mini { display: none; }
+      #zutrula-homepage-blueprint .zhp-scale { padding-top: 66px; padding-bottom: 66px; }
+      #zutrula-homepage-blueprint .zhp-scale-path { padding-left: 30px; }
+      #zutrula-homepage-blueprint .zhp-scale-node:nth-child(2),
+      #zutrula-homepage-blueprint .zhp-scale-node:nth-child(3) { transform: none; }
+      #zutrula-homepage-blueprint .zhp-form-lines { grid-template-columns: 1fr; }
+      #zutrula-homepage-blueprint .zhp-form-line.wide { grid-column: auto; }
+      #zutrula-homepage-blueprint .zhp-feature { gap: 34px; }
+      #zutrula-homepage-blueprint .zhp-final { margin: 0 20px 30px; padding: 30px 24px; align-items: flex-start; flex-direction: column; }
+      #zutrula-homepage-blueprint .zhp-final .zhp-calendar-host,
+      #zutrula-homepage-blueprint .zhp-final .zhp-calendar-host button { width: 100%; text-align: center; }
+      #zutrula-homepage-blueprint .zhp-footer { padding-bottom: 28px; flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #zutrula-homepage-blueprint .zhp-hero-object { animation: none; }
+      #zutrula-homepage-blueprint .zhp-product-slide { transition: none; }
+      #zutrula-homepage-blueprint .zhp-story-bar { animation: none; }
+      #zutrula-homepage-blueprint .zhp-story-window,
+      #zutrula-homepage-blueprint .zhp-story-stage,
+      #zutrula-homepage-blueprint .zhp-step-dot,
+      #zutrula-homepage-blueprint .zhp-step-copy,
+      #zutrula-homepage-blueprint .zhp-story-progress span { transition: none; }
+      #zutrula-homepage-blueprint .zhp-reveal-copy > *,
+      #zutrula-homepage-blueprint .zhp-reveal-visual,
+      #zutrula-homepage-blueprint .zhp-reveal-group > * { opacity: 1; transform: none; transition: none; }
+    }
+  

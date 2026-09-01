@@ -1,685 +1,326 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Zutrula – AI-Powered Travel Solutions</title>
-    <link
-      href="https://fonts.googleapis.com/css?family=Inter:wght@400;600;900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      rel="stylesheet"
-    />
-    <style>
-      body {
-        margin: 0;
-        font-family: "Inter", Arial, sans-serif;
-        background: #fff;
-        color: #1b2233;
-      }
-      html {
-        scroll-behavior: smooth;
-      }
-      .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1.5rem 4vw;
-        background: #fff;
-        box-shadow: 0 2px 8px #eceefc59;
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-      }
-      .navbar .logo {
-        font-weight: 900;
-        font-size: 2rem;
-        letter-spacing: -1px;
-        color: #3260ff;
-      }
-      .navbar nav {
-        display: flex;
-        align-items: center;
-        gap: 2rem;
-      }
-      .navbar nav a {
-        text-decoration: none;
-        color: #333;
-        font-weight: 600;
-        transition: color 0.2s;
-      }
-      .navbar nav a:hover {
-        color: #3260ff;
-      }
-      .dropdown {
-        position: relative;
-        display: inline-block;
-      }
-      .dropdown-btn {
-        background: none;
-        border: none;
-        color: #333;
-        font-weight: 600;
-        font-size: 1rem;
-        cursor: pointer;
-        padding: 0;
-        font-family: inherit;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-      }
-      .dropdown-btn:hover {
-        color: #3260ff;
-      }
-      .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #fff;
-        min-width: 200px;
-        box-shadow: 0 8px 24px rgba(50, 96, 255, 0.15);
-        border-radius: 8px;
-        z-index: 1;
-        top: 100%;
-        margin-top: 0.5rem;
-      }
-      .dropdown-content a {
-        color: #333;
-        padding: 12px 20px;
-        text-decoration: none;
-        display: block;
-        font-weight: 500;
-        transition: background-color 0.2s;
-      }
-      .dropdown-content a:hover {
-        background-color: #f0f4ff;
-        color: #3260ff;
-      }
-      .dropdown:hover .dropdown-content {
-        display: block;
-      }
-      .logo-img {
-        width: 100px;
-        height: 25px;
-      }
-      @media screen and (min-width: 768px) {
-        .logo-img {
-          width: 150px;
-          height: 40px;
-        }
-      }
-      /* Hero Section */
-      .hero {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        padding: 4rem 4vw 2rem 4vw;
-        min-height: 70vh;
-      }
-      .hero-content {
-        max-width: 650px;
-      }
-      .hero-title {
-        font-size: 3.5rem;
-        font-weight: 900;
-        line-height: 1.1;
-        margin-bottom: 1.5rem;
-      }
-      .hero-title span {
-        color: #3260ff;
-        background: linear-gradient(90deg, #3260ff 70%, #41d1ff 100%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        color: transparent;
-        -webkit-text-fill-color: transparent;
-      }
-      .hero-desc {
-        font-size: 1.25rem;
-        margin: 1.5rem 0 2.5rem 0;
-        color: #626c7e;
-        line-height: 1.6;
-      }
-      .cta-btn {
-        background: linear-gradient(90deg, #3260ff, #41d1ff);
-        color: #fff;
-        font-size: 1.2rem;
-        font-weight: 600;
-        border: none;
-        border-radius: 40px;
-        padding: 1rem 2.5rem;
-        cursor: pointer;
-        box-shadow: 0 4px 20px #3260ff29;
-        transition:
-          box-shadow 0.15s,
-          transform 0.15s;
-        text-decoration: none;
-        display: inline-block;
-      }
-      .cta-btn:hover {
-        box-shadow: 0 8px 32px #41d1ff2f;
-        transform: translateY(-2px);
-      }
-      .hero-image {
-        width: 530px;
-        height: 395px;
-        border-radius: 2rem;
-      }
-      @media (max-width: 900px) {
-        .hero {
-          flex-direction: column;
-          gap: 3rem;
-          text-align: center;
-        }
-        .hero-image {
-          width: 90vw;
-          max-width: 400px;
-          height: auto;
-        }
-        .hero-title {
-          font-size: 2.5rem;
-        }
-        .navbar nav {
-          gap: 1rem;
-        }
-      }
-      /* Products Section */
-      .products-section {
-        background: #f8f9ff;
-        padding: 5rem 4vw;
-      }
-      .products-container {
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-      .section-title {
-        font-size: 2.5rem;
-        font-weight: 800;
-        text-align: center;
-        margin-bottom: 1rem;
-        background: linear-gradient(90deg, #3260ff, #41d1ff);
-        color: transparent;
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-      .section-subtitle {
-        text-align: center;
-        font-size: 1.2rem;
-        color: #626c7e;
-        margin-bottom: 4rem;
-      }
-      .products-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-        gap: 3rem;
-      }
-      .product-card {
-        background: #fff;
-        border-radius: 20px;
-        overflow: hidden;
-        box-shadow: 0 8px 30px rgba(50, 96, 255, 0.1);
-        transition:
-          transform 0.3s,
-          box-shadow 0.3s;
-      }
-      .product-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 16px 50px rgba(50, 96, 255, 0.15);
-      }
-      .product-header {
-        padding: 2.5rem 2.5rem 1.5rem 2.5rem;
-      }
-      .product-icon {
-        font-size: 3rem;
-        margin-bottom: 1rem;
-      }
-      .product-card.captain .product-icon {
-        color: #3260ff;
-      }
-      .product-card.navil .product-icon {
-        color: #667eea;
-      }
-      .product-title {
-        font-size: 1.8rem;
-        font-weight: 800;
-        margin-bottom: 0.5rem;
-      }
-      .product-tagline {
-        font-size: 1.1rem;
-        color: #626c7e;
-        margin-bottom: 1.5rem;
-      }
-      .product-desc {
-        font-size: 1rem;
-        color: #505977;
-        line-height: 1.7;
-        margin-bottom: 2rem;
-      }
-      .product-features {
-        list-style: none;
-        padding: 0;
-        margin: 0 0 2rem 0;
-      }
-      .product-features li {
-        padding: 0.5rem 0;
-        display: flex;
-        align-items: center;
-        color: #505977;
-      }
-      .product-features li i {
-        color: #3260ff;
-        margin-right: 0.8rem;
-        font-size: 1.1rem;
-      }
-      .product-card.navil .product-features li i {
-        color: #667eea;
-      }
-      .product-footer {
-        padding: 0 2.5rem 2.5rem 2.5rem;
-      }
-      .product-btn {
-        width: 100%;
-        background: linear-gradient(90deg, #3260ff, #41d1ff);
-        color: #fff;
-        font-size: 1.1rem;
-        font-weight: 600;
-        border: none;
-        border-radius: 30px;
-        padding: 1rem 2rem;
-        cursor: pointer;
-        transition:
-          box-shadow 0.2s,
-          transform 0.2s;
-        text-decoration: none;
-        display: inline-block;
-        text-align: center;
-      }
-      .product-card.navil .product-btn {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      }
-      .product-btn:hover {
-        box-shadow: 0 6px 25px rgba(50, 96, 255, 0.3);
-        transform: translateY(-2px);
-      }
-      @media (max-width: 1000px) {
-        .products-grid {
-          grid-template-columns: 1fr;
-        }
-      }
-      /* Contact Section */
-      .contact-section {
-        max-width: 1060px;
-        margin: 5rem auto 0 auto;
-        padding: 2.5rem 4vw;
-        display: flex;
-        gap: 3rem;
-        background: #fff;
-        border-radius: 1.5rem;
-        box-shadow: 0 8px 48px #041d4522;
-        align-items: flex-start;
-        flex-wrap: wrap;
-      }
-      .contact-info {
-        flex: 1 1 300px;
-        min-width: 260px;
-        color: #353c56;
-        font-size: 1rem;
-        line-height: 1.7;
-      }
-      .navil-icon {
-        height: 80px;
-        width: 80px;
-      }
-      .contact-info h2 {
-        color: #3260ff;
-        font-size: 1.25rem;
-        margin-bottom: 1.2rem;
-        font-weight: 700;
-      }
-      .contact-info ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
-      .contact-info li {
-        margin-bottom: 14px;
-        display: flex;
-        align-items: baseline;
-      }
-      .contact-info li span {
-        margin-right: 0.9em;
-        font-size: 1.2em;
-      }
-      .contact-info .hours {
-        font-size: 0.96rem;
-        color: #516079;
-      }
-      /* Contact Form */
-      .contact-form-container {
-        flex: 2 1 340px;
-        min-width: 320px;
-        background: #232429;
-        border-radius: 1.3rem;
-        padding: 2.2rem 2rem 2.3rem 2rem;
-        color: #eee;
-        max-width: 432px;
-      }
-      .contact-form-container h3 {
-        color: #fff;
-        font-size: 1.2rem;
-        margin-bottom: 1.8rem;
-        letter-spacing: 0.01em;
-      }
-      form {
-        display: flex;
-        flex-direction: column;
-        gap: 1.1rem;
-      }
-      form input,
-      form textarea {
-        border-radius: 6px;
-        border: none;
-        outline: none;
-        padding: 1rem;
-        font-size: 1.04rem;
-        font-family: inherit;
-        background: #2c2e34;
-        color: #fff;
-        box-shadow: 0 2px 8px #1825450a inset;
-        resize: none;
-      }
-      form input::placeholder,
-      form textarea::placeholder {
-        color: #b7c2d6;
-      }
-      form textarea {
-        min-height: 88px;
-      }
-      .send-btn {
-        background: linear-gradient(90deg, #4e60ff, #41d1ff);
-        color: #fff;
-        font-size: 1.07rem;
-        font-weight: 600;
-        border: none;
-        border-radius: 30px;
-        padding: 0.95rem 1.8rem;
-        cursor: pointer;
-        box-shadow: 0 3px 18px #3260ff29;
-        margin-top: 10px;
-        transition: box-shadow 0.15s;
-      }
-      .send-btn:hover {
-        box-shadow: 0 5px 20px #41d1ff37;
-      }
-      /* Footer */
-      .footer {
-        background: #eef2fc;
-        color: #556;
-        padding: 2.5rem 0 1rem 0;
-        text-align: center;
-        font-size: 1rem;
-        margin-top: 3.7rem;
-      }
-      .footer a {
-        color: #3260ff;
-        text-decoration: underline;
-        margin-left: 8px;
-        font-weight: 500;
-      }
-      @media (max-width: 900px) {
-        .contact-section {
-          flex-direction: column;
-          max-width: 95vw;
-          padding: 2.2rem 3vw;
-        }
-        .contact-form-container {
-          max-width: 100%;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <header class="navbar">
-      <div class="logo">
-        <a href="navil.html"
-          ><img src="./zutrula-logo.png" class="logo-img"
-        /></a>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#ffffff">
+<title>Zutrula — The Travel OS</title><meta name="description" content="CRM, group tours, websites, itineraries, marketing and agent performance, connected in one travel-focused operating system."><meta property="og:title" content="Zutrula — The Travel OS"><meta property="og:description" content="CRM, group tours, websites, itineraries, marketing and agent performance, connected in one travel-focused operating system."><meta property="og:type" content="website">
+<link rel="stylesheet" href="./assets/home.css">
+<link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+<link rel="stylesheet" href="./assets/site.css"><script src="./assets/site.js" defer></script>
+<script src="./assets/home.js" defer></script>
+</head><body><a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><nav class="site-nav" aria-label="Main navigation">
+<a class="site-brand" href="./index.html" aria-label="Zutrula home"><img src="./assets/zutrula-logo-colour.png" alt="Zutrula"></a>
+<button class="menu-toggle" aria-expanded="false" aria-controls="navigation" type="button">Menu ☰</button>
+<div class="nav-links" id="navigation"><a href="./index.html">Home</a>
+<details class="nav-dropdown"><summary>Products</summary><div class="nav-panel nav-panel-products"><a href="./products/captain-crm/index.html">Captain CRM<small>Your customer operation, built around travel.</small></a><a href="./products/group-tour/index.html">Group Tour Suite<small>The whole fixed departure, one dashboard.</small></a><a href="./products/itinerary-commerce/index.html">Itinerary as E-commerce<small>Turn every itinerary into a bookable journey.</small></a></div></details>
+<details class="nav-dropdown"><summary>Modules</summary><div class="nav-panel nav-panel-modules"><a href="./modules/document-collection/index.html">Document Collection<small>Passenger uploads, organized and verified.</small></a>
+<a href="./modules/enquiry-hub/index.html">Social Media Enquiry Hub<small>Capture sources. Match customers. Keep context.</small></a>
+<a href="./modules/supplier-management/index.html">Supplier Management<small>The supplier trail, from request to payment.</small></a>
+<a href="./modules/group-tour-management/index.html">Group Tour Management<small>Inventory, passengers and payments across the group.</small></a>
+<a href="./modules/ready-made-website/index.html">Ready-made Website<small>Tour pages built to share, enquire and check out.</small></a>
+<a href="./modules/marketing-campaigns/index.html">Marketing Campaigns<small>Travel patterns become focused campaign audiences.</small></a>
+<a href="./modules/agent-performance/index.html">Agent Performance<small>Visible progress. Motivated agents. Clear due work.</small></a>
+<a href="./modules/team-management/index.html">Team Management<small>Roles, access and activity for growing teams.</small></a>
+<a href="./modules/finance-payments/index.html">Finance &amp; Payments<small>Billing, collections and balances tied to the trip.</small></a>
+<a href="./modules/reporting/index.html">Reporting<small>Customer, pipeline, team and payment insights.</small></a>
+<a href="./modules/itinerary-commerce/index.html">Itinerary as E-commerce<small>Build, price, publish and move the trip forward.</small></a></div></details>
+<a href="./company/index.html">Company</a>
+</div>
+</nav></header><div class="legacy-page" id="zutrula-homepage-blueprint">
+  
+
+  
+
+  <main id="main">
+    <section class="zhp-shell zhp-hero">
+      <div class="zhp-hero-ornaments" aria-hidden="true">
+        <span class="zhp-hero-object zhp-object-1"><svg viewBox="0 0 64 64"><path d="M8 31 55 9 40 55 29 37 8 31Z"/><path d="m29 37 26-28M29 37l-2 12 8-8"/></svg></span>
+        <span class="zhp-hero-object zhp-object-2"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="23"/><circle cx="32" cy="32" r="4"/><path d="m39 18-3 15-11 13 3-15 11-13Z"/></svg></span>
+        <span class="zhp-hero-object zhp-object-3"><svg viewBox="0 0 64 64"><rect x="12" y="20" width="40" height="32" rx="5"/><path d="M24 20v-6h16v6M12 33h40M22 30v6M42 30v6"/></svg></span>
+        <span class="zhp-hero-object zhp-object-4"><svg viewBox="0 0 64 64"><path d="M10 18h44v10a6 6 0 0 0 0 12v10H10V40a6 6 0 0 0 0-12V18Z"/><path d="M32 18v32" stroke-dasharray="3 5"/></svg></span>
+        <span class="zhp-hero-object zhp-object-5"><svg viewBox="0 0 64 64"><path d="M32 56S14 40 14 25a18 18 0 1 1 36 0c0 15-18 31-18 31Z"/><circle cx="32" cy="25" r="6"/></svg></span>
+        <span class="zhp-hero-object zhp-object-6"><svg viewBox="0 0 64 64"><rect x="14" y="8" width="36" height="48" rx="4"/><path d="M20 16h24M22 31h20M22 39h15M32 8v48"/></svg></span>
       </div>
-      <nav>
-        <div class="dropdown">
-          <button class="dropdown-btn">
-            Products <i class="fas fa-chevron-down"></i>
+      <div class="zhp-reveal-copy">
+        <div class="zhp-eyebrow"><span class="zhp-brand-name">Zutrula</span><span class="zhp-brand-system">The Travel OS</span></div>
+        <h1><span class="headline-main"><span class="zhp-headline-line">Your whole <span class="zhp-headline-teal">travel business</span></span><span class="zhp-headline-line">finally <span class="headline-key">working as one</span>.</span></span></h1>
+        <p class="zhp-lede">CRM, group tours, websites, itineraries, marketing and agent performance—connected in one travel-focused operating system.</p>
+        <div class="zhp-actions">
+          <span class="zhp-calendar-host" data-google-calendar-button data-calendar-label="Book a Demo"></span>
+          <a class="zhp-secondary" href="#products">Explore the Platform</a>
+        </div>
+        <p class="zhp-trust">Built for travel agencies · 99.99% uptime over the last 12 months</p>
+      </div>
+
+    </section>
+
+    <section class="zhp-proof-wrap" aria-label="Zutrula proof points">
+      <div class="zhp-shell zhp-proof zhp-reveal-group">
+        <div class="zhp-proof-item"><span class="zhp-proof-value">12 lakh+</span><span class="zhp-proof-label">leads managed</span></div>
+        <div class="zhp-proof-item"><span class="zhp-proof-value">1.3 lakh+</span><span class="zhp-proof-label">social-media enquiries captured</span></div>
+        <div class="zhp-proof-item"><span class="zhp-proof-value">250+</span><span class="zhp-proof-label">travel agents using Zutrula</span></div>
+        <div class="zhp-proof-item"><span class="zhp-proof-value">99.99%</span><span class="zhp-proof-label">uptime over the last 12 months</span></div>
+      </div>
+    </section>
+
+    <section class="zhp-shell zhp-section" id="products">
+      <div class="zhp-centered zhp-reveal-copy">
+        <div class="zhp-eyebrow">Built for the way you operate</div>
+        <h2>Three products. One more organized travel business.</h2>
+        <p>Choose the product that fits your everyday customer work, fixed departures, or customer-ready itineraries.</p>
+      </div>
+      <div class="zhp-products zhp-reveal-group" hidden>
+        <article class="zhp-product">
+          <div class="zhp-product-visual">
+            <div class="zhp-mini-ui"><div class="zhp-mini-head"></div><div class="zhp-mini-line"></div><div class="zhp-mini-line"></div><div class="zhp-mini-line"></div></div>
+          </div>
+          <div class="zhp-product-body">
+            <h3>Captain CRM</h3>
+            <div class="zhp-product-sub">Your customer operation, built around travel.</div>
+            <p>Customers, requirements, itineraries, passengers, suppliers, tasks and payments—connected in one travel-specific workflow.</p>
+            <a class="zhp-text-link" href="./products/captain-crm/index.html">Explore Captain CRM →</a>
+          </div>
+        </article>
+        <article class="zhp-product">
+          <div class="zhp-product-visual">
+            <div class="zhp-mini-ui"><div class="zhp-mini-head"></div><div class="zhp-mini-line"></div><div class="zhp-mini-line"></div><div class="zhp-mini-line"></div></div>
+          </div>
+          <div class="zhp-product-body">
+            <h3>Group Tour Suite</h3>
+            <div class="zhp-product-sub">The whole fixed departure, one dashboard.</div>
+            <p>Leads, inventory, passengers, payments, documents and reminders—visible across the entire group.</p>
+            <a class="zhp-text-link" href="./products/group-tour/index.html">Explore Group Tour Suite →</a>
+          </div>
+        </article>
+        <article class="zhp-product">
+          <div class="zhp-product-visual">
+            <div class="zhp-mini-ui"><div class="zhp-mini-head"></div><div class="zhp-mini-line"></div><div class="zhp-mini-line"></div><div class="zhp-mini-line"></div></div>
+          </div>
+          <div class="zhp-product-body">
+            <h3>Itinerary as E-commerce</h3>
+            <div class="zhp-product-sub">Turn every itinerary into a bookable journey.</div>
+            <p>Build, price and share polished itineraries that customers can review, reserve and pay for online.</p>
+            <a class="zhp-text-link" href="./products/itinerary-commerce/index.html">Explore Itinerary as E-commerce →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="zhp-tinted" id="platform">
+      <div class="zhp-shell zhp-section zhp-feature">
+        <div class="zhp-copy zhp-reveal-copy">
+          <div class="zhp-eyebrow">Captain CRM</div>
+          <h2>Capture the trip, not just the contact.</h2>
+          <p>Record destination, hotel, flight, visa, cruise, passport, MICE and forex requirements in a workflow built specifically for travel.</p>
+          <ul class="zhp-bullets">
+            <li><span class="zhp-bullet-check">✓</span><span>Travel-specific requirement capture</span></li>
+            <li><span class="zhp-bullet-check">✓</span><span>Customer and booking history in one place</span></li>
+            <li><span class="zhp-bullet-check">✓</span><span>Tasks, reminders and readiness checks</span></li>
+          </ul>
+        </div>
+        <div class="zhp-feature-visual zhp-reveal-visual">
+          <div class="zhp-product-carousel zhp-product-carousel--captain" data-product-carousel aria-label="Captain CRM product screenshots">
+            <div class="zhp-product-carousel-viewport">
+              <figure class="zhp-product-slide is-active" data-product-slide aria-hidden="false">
+                <img src="./screencaps/lead_index.jpeg" alt="Captain CRM lead list with search filters, pipeline stages, assignees and lead details">
+              </figure>
+              <figure class="zhp-product-slide zhp-product-slide--crop" data-product-slide aria-hidden="true">
+                <img src="./screencaps/lead_overview.png" alt="Captain CRM lead overview with travel requirements, itinerary, tasks, invoices and customer details">
+              </figure>
+              <figure class="zhp-product-slide zhp-product-slide--crop" data-product-slide aria-hidden="true">
+                <img src="./screencaps/Market_Campaign.png" alt="Captain CRM marketing campaign builder with audience filters and customer preview">
+              </figure>
+            </div>
+            <div class="zhp-product-carousel-controls">
+              <button class="zhp-product-carousel-arrow" type="button" data-carousel-prev aria-label="Previous Captain CRM screenshot">←</button>
+              <div class="zhp-product-carousel-dots" aria-label="Choose Captain CRM screenshot">
+                <button class="zhp-product-carousel-dot" type="button" data-carousel-dot aria-label="Show lead list" aria-current="true"></button>
+                <button class="zhp-product-carousel-dot" type="button" data-carousel-dot aria-label="Show lead overview" aria-current="false"></button>
+                <button class="zhp-product-carousel-dot" type="button" data-carousel-dot aria-label="Show marketing campaign" aria-current="false"></button>
+              </div>
+              <button class="zhp-product-carousel-arrow" type="button" data-carousel-next aria-label="Next Captain CRM screenshot">→</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="zhp-tinted-blue" id="group-tour-suite">
+      <div class="zhp-shell zhp-section zhp-feature reverse">
+        <div class="zhp-copy zhp-reveal-copy">
+          <div class="zhp-eyebrow">Group Tour Suite</div>
+          <h2>The whole fixed departure, one dashboard.</h2>
+          <p>Run leads, inventory, passengers, payments, documents and reminders across every stage of a group departure.</p>
+          <ul class="zhp-bullets">
+            <li><span class="zhp-bullet-check">✓</span><span>Lead pipeline and departure inventory in one view</span></li>
+            <li><span class="zhp-bullet-check">✓</span><span>Passenger manifests, documents and rooming details</span></li>
+            <li><span class="zhp-bullet-check">✓</span><span>Payments, reminders and departure readiness</span></li>
+          </ul>
+        </div>
+        <div class="zhp-feature-visual zhp-reveal-visual from-left">
+          <div class="zhp-product-carousel" data-product-carousel aria-label="Group Tour Suite product screenshots">
+            <div class="zhp-product-carousel-viewport">
+              <figure class="zhp-product-slide is-active" data-product-slide aria-hidden="false">
+                <img src="./screencaps/GD_show.jpeg" alt="Group Tour Suite lead pipeline showing departure inventory, lead stages and mass communication">
+              </figure>
+              <figure class="zhp-product-slide" data-product-slide aria-hidden="true">
+                <img src="./screencaps/home_GD-passenger%20copy.png" alt="Group Tour Suite passenger manifest showing departure inventory, passenger documents and group communication">
+              </figure>
+              <figure class="zhp-product-slide" data-product-slide aria-hidden="true">
+                <img src="./screencaps/GD-payment%20grid.jpeg" alt="Group Tour Suite payment grid showing receivables, collections, outstanding balances and traveller payment status">
+              </figure>
+            </div>
+            <div class="zhp-product-carousel-controls">
+              <button class="zhp-product-carousel-arrow" type="button" data-carousel-prev aria-label="Previous Group Tour screenshot">←</button>
+              <div class="zhp-product-carousel-dots" aria-label="Choose Group Tour screenshot">
+                <button class="zhp-product-carousel-dot" type="button" data-carousel-dot aria-label="Show lead pipeline" aria-current="true"></button>
+                <button class="zhp-product-carousel-dot" type="button" data-carousel-dot aria-label="Show passenger manifest" aria-current="false"></button>
+                <button class="zhp-product-carousel-dot" type="button" data-carousel-dot aria-label="Show payment grid" aria-current="false"></button>
+              </div>
+              <button class="zhp-product-carousel-arrow" type="button" data-carousel-next aria-label="Next Group Tour screenshot">→</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="zhp-scroll-section" hidden>
+      <div class="zhp-scroll-story">
+        <div class="zhp-scroll-sticky">
+          <div class="zhp-shell zhp-scroll-inner">
+            <div class="zhp-grid-title zhp-reveal-copy">
+              <div class="zhp-eyebrow">The travel operation, connected</div>
+              <h2>The work moves together because the data moves together.</h2>
+              <p>Move through the operation and see how each part of the travel business stays connected.</p>
+              <span class="zhp-scroll-hint">Scroll to explore six connected modules</span>
+            </div>
+            <div class="zhp-story">
+        <div class="zhp-story-nav" aria-label="Explore connected modules">
+          <button class="zhp-story-step" type="button" data-story="group" aria-label="Group Tour" aria-pressed="true">
+            <span class="zhp-step-dot">01</span><span class="zhp-step-copy"><strong>Group Tour</strong><small>The whole departure, one dashboard.</small></span>
           </button>
-          <div class="dropdown-content">
-            <a href="captain.html">Captain CRM</a>
-            <a href="navil.html">Navil AI Agent</a>
-          </div>
+          <button class="zhp-story-step" type="button" data-story="website" aria-label="Ready-made Website" aria-pressed="false">
+            <span class="zhp-step-dot">02</span><span class="zhp-step-copy"><strong>Ready-made Website</strong><small>Publish the tour. Capture the enquiry.</small></span>
+          </button>
+          <button class="zhp-story-step" type="button" data-story="itinerary" aria-label="Itinerary Generation" aria-pressed="false">
+            <span class="zhp-step-dot">03</span><span class="zhp-step-copy"><strong>Itinerary Generation</strong><small>Build, price and publish in one flow.</small></span>
+          </button>
+          <button class="zhp-story-step" type="button" data-story="marketing" aria-label="Marketing Campaigns" aria-pressed="false">
+            <span class="zhp-step-dot">04</span><span class="zhp-step-copy"><strong>Marketing Campaigns</strong><small>The right trip for the right audience.</small></span>
+          </button>
+          <button class="zhp-story-step" type="button" data-story="performance" aria-label="Agent Performance" aria-pressed="false">
+            <span class="zhp-step-dot">05</span><span class="zhp-step-copy"><strong>Agent Performance</strong><small>Make performance visible.</small></span>
+          </button>
+          <button class="zhp-story-step" type="button" data-story="documents" aria-label="Documents and Suppliers" aria-pressed="false">
+            <span class="zhp-step-dot">06</span><span class="zhp-step-copy"><strong>Documents & Suppliers</strong><small>Keep collection and fulfilment moving.</small></span>
+          </button>
         </div>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
 
-    <section class="hero">
-      <div class="hero-content">
-        <div class="hero-title">
-          Transform Your <span>Travel Business</span><br />
-          with AI-Powered Solutions
-        </div>
-        <div class="hero-desc">
-          Zutrula brings cutting-edge technology to travel agencies with two
-          powerful products: <strong>Captain CRM</strong>
-          for managing your business operations, and
-          <strong>Navil AI Agent</strong> for engaging customers with
-          intelligent conversational experiences. <br /><br />
-          <small>Modern. Intelligent. Built for the Future of Travel.</small>
-        </div>
-        <a class="cta-btn" href="#products">Explore Products</a>
-      </div>
-      <div>
-        <img
-          src="./sm_int.png"
-          alt="Zutrula platform interface"
-          class="hero-image"
-        />
-      </div>
-    </section>
-
-    <section class="products-section" id="products">
-      <div class="products-container">
-        <h2 class="section-title">Our Products</h2>
-        <p class="section-subtitle">
-          Choose the right solution for your travel business needs
-        </p>
-
-        <div class="products-grid">
-          <!-- Captain CRM -->
-          <div class="product-card captain">
-            <div class="product-header">
-              <div class="product-icon">
-                <i class="fas fa-chart-line"></i>
+        <div class="zhp-story-stage" aria-live="polite">
+          <span class="zhp-story-orb one" aria-hidden="true"></span>
+          <span class="zhp-story-orb two" aria-hidden="true"></span>
+          <div class="zhp-story-window">
+            <div class="zhp-story-chrome">
+              <i class="zhp-dot" style="background:#ff786b"></i><i class="zhp-dot" style="background:#ffc857"></i><i class="zhp-dot" style="background:#16bca9"></i>
+              <span>Zutrula · Connected operation</span>
+            </div>
+            <div class="zhp-story-canvas">
+              <div class="zhp-story-main">
+                <div class="zhp-story-kicker">Group Tour</div>
+                <h3 class="zhp-story-heading">One departure. Hundreds of details. One dashboard.</h3>
+                <p class="zhp-story-description">Connect leads, inventory, payments, manifests, documents and reminders across the full departure.</p>
+                <div class="zhp-story-rows">
+                  <div class="zhp-story-row"><span class="zhp-story-row-icon">01</span><span>Lead pipeline and inventory</span><span class="zhp-story-row-status">In view</span></div>
+                  <div class="zhp-story-row"><span class="zhp-story-row-icon">02</span><span>Passenger manifest</span><span class="zhp-story-row-status">Updated</span></div>
+                  <div class="zhp-story-row"><span class="zhp-story-row-icon">03</span><span>Payments and reminders</span><span class="zhp-story-row-status">Connected</span></div>
+                </div>
               </div>
-              <h3 class="product-title">Captain CRM</h3>
-              <p class="product-tagline">AI Travel CRM for Modern Agencies</p>
-              <p class="product-desc">
-                The next-generation Travel CRM built for agile agencies.
-                Automate lead capture, craft smart itineraries, manage bookings,
-                and grow your business with intelligent insights.
-              </p>
-              <ul class="product-features">
-                <li>
-                  <i class="fas fa-check-circle"></i>
-                  Lead Capture & Dynamic Profiles
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i>
-                  Social Media Integration
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i>
-                  Enquiry Deduplication
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i>
-                  Analytics & Smart Insights
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i>
-                  Secure Invoicing & Payments
-                </li>
-              </ul>
-            </div>
-            <div class="product-footer">
-              <a href="captain.html" class="product-btn">Learn More →</a>
+              <div class="zhp-story-side">
+                <div class="zhp-story-spotlight">
+                  <div class="zhp-story-spotlight-label">Operational view</div>
+                  <div class="zhp-story-spotlight-value">Departure ready</div>
+                  <div class="zhp-story-spotlight-copy">The current status stays visible across the group.</div>
+                </div>
+                <div class="zhp-story-mini">
+                  <div class="zhp-story-mini-label">Live activity</div>
+                  <div class="zhp-story-bars" aria-hidden="true"><span class="zhp-story-bar"></span><span class="zhp-story-bar"></span><span class="zhp-story-bar"></span><span class="zhp-story-bar"></span></div>
+                </div>
+              </div>
             </div>
           </div>
-
-          <!-- Navil AI Agent -->
-          <div class="product-card navil">
-            <div class="product-header">
-              <div class="product-icon">
-                <img class="navil-icon" src="./navil_logo.jpeg" />
-              </div>
-              <h3 class="product-title">Navil AI Agent</h3>
-              <p class="product-tagline">End-To-End Travel Chat Assistant</p>
-              <p class="product-desc">
-                AI-powered travel companion that guides customers from inquiry
-                to booking with intelligent, conversational experiences. Create
-                personalized packages instantly through chat.
-              </p>
-              <ul class="product-features">
-                <li>
-                  <i class="fas fa-check-circle"></i>
-                  Conversational Trip Planning
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i>
-                  Instant Package Generation
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i>
-                  Mobile-Friendly Experience
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i>
-                  Dynamic Itinerary Builder
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i>
-                  Document Sharing & Verification
-                </li>
-              </ul>
-            </div>
-            <div class="product-footer">
-              <a href="navil.html" class="product-btn">Learn More →</a>
+          <div class="zhp-story-progress" aria-hidden="true"><span></span></div>
+          <div class="zhp-story-counter"><span>01</span> / 06</div>
+        </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT US SECTION (Request a Demo) -->
-    <section class="contact-section" id="contact">
-      <div class="contact-info">
-        <h2>Contact Information</h2>
-        <ul>
-          <li>
-            <span>📍</span>64/2, Chenniyavalasu, Perundurai – 638052<br />
-            Erode District, Tamil Nadu, India
-          </li>
-          <li><span>📞</span>+91 6374 790 439</li>
-          <li><span>✉️</span>zutrula.app@gmail.com</li>
-          <li>
-            <span>⏰</span
-            ><span class="hours">Mon – Fri: 9:00 AM – 6:00 PM IST</span>
-          </li>
-        </ul>
-      </div>
-      <div class="contact-form-container">
-        <h3>Request a Demo</h3>
-        <form
-          id="contact-form"
-          autocomplete="off"
-          method="post"
-          name="contact-form"
-        >
-          <input
-            id="contact-name"
-            type="text"
-            name="fullname"
-            placeholder="Your Name"
-            required
-          />
-          <input
-            id="contact-email"
-            type="email"
-            name="email"
-            placeholder="your@email.com"
-            required
-          />
-          <input
-            id="contact-phone"
-            type="tel"
-            name="phone"
-            placeholder="+91 XXXXXX XXXXX"
-            required
-            pattern="[\d\+\-\s]+"
-          />
-          <textarea
-            id="message"
-            name="message"
-            placeholder="Tell us about your travel business and which product interests you..."
-            required
-          ></textarea>
-          <button type="submit" class="send-btn">Send Message</button>
-        </form>
+    <section class="zhp-tinted" id="itinerary-commerce">
+      <div class="zhp-shell zhp-section zhp-feature">
+        <div class="zhp-copy zhp-reveal-copy">
+          <div class="zhp-eyebrow">Itinerary as E-commerce</div>
+          <h2>Turn every itinerary into a bookable journey.</h2>
+          <p>Build, price and publish polished itineraries that customers can review, reserve and pay for online.</p>
+          <ul class="zhp-bullets">
+            <li><span class="zhp-bullet-check">✓</span><span>Customer-ready itinerary pages</span></li>
+            <li><span class="zhp-bullet-check">✓</span><span>Clear pricing, inclusions and trip details</span></li>
+            <li><span class="zhp-bullet-check">✓</span><span>Reservation and payment journey in one flow</span></li>
+          </ul>
+        </div>
+        <div class="zhp-feature-visual zhp-reveal-visual">
+          <div class="zhp-product-carousel zhp-product-carousel--mobile" data-product-carousel aria-label="Itinerary as E-commerce screenshots">
+            <div class="zhp-product-carousel-viewport">
+              <figure class="zhp-product-slide is-active" data-product-slide aria-hidden="false">
+                <img src="./screencaps/home_itinerary-full-preview%20copy.png" alt="Mobile itinerary preview showing a day-by-day Singapore journey and package pricing">
+              </figure>
+              <figure class="zhp-product-slide" data-product-slide aria-hidden="true">
+                <img src="./screencaps/home_iti_payment.png" alt="Mobile secure checkout showing itinerary pricing, deposit choices and payment methods">
+              </figure>
+            </div>
+            <div class="zhp-product-carousel-controls">
+              <button class="zhp-product-carousel-arrow" type="button" data-carousel-prev aria-label="Previous itinerary screenshot">←</button>
+              <div class="zhp-product-carousel-dots" aria-label="Choose itinerary screenshot">
+                <button class="zhp-product-carousel-dot" type="button" data-carousel-dot aria-label="Show customer itinerary preview" aria-current="true"></button>
+                <button class="zhp-product-carousel-dot" type="button" data-carousel-dot aria-label="Show secure checkout" aria-current="false"></button>
+              </div>
+              <button class="zhp-product-carousel-arrow" type="button" data-carousel-next aria-label="Next itinerary screenshot">→</button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <footer class="footer">
-      &copy; 2026 Zutrula. All rights reserved.
-      <a href="/privacy-policy.html" target="_blank" rel="noopener"
-        >Privacy Policy</a
-      >
-    </footer>
+    <section class="zhp-shell zhp-scale">
+      <div class="zhp-reveal-copy">
+        <div class="zhp-eyebrow">Built for businesses at every scale</div>
+        <h2>We work with large businesses, so we know how to help small ones as well.</h2>
+        <p class="zhp-scale-copy">Zutrula brings proven travel workflows, clearer processes and operational visibility to agencies at every stage of growth.</p>
+      </div>
+      <div class="zhp-scale-path zhp-reveal-group" aria-label="Experience translated into practical growth">
+        <div class="zhp-scale-node">Large-business experience</div>
+        <div class="zhp-scale-node">Clear travel workflows</div>
+        <div class="zhp-scale-node">Growth-ready operations</div>
+      </div>
+    </section>
 
-    <script>
-      // Form submission
-      document
-        .getElementById("contact-form")
-        .addEventListener("submit", function (e) {
-          e.preventDefault();
+    <section class="shell section module-directory" id="all-modules"><div class="section-heading" data-reveal><div class="eyebrow">Explore the platform</div><h2>Go deeper into the work.</h2><p>A closer look at the modules behind a more organized travel business.</p></div><div class="directory-grid"><a class="directory-item" href="./modules/document-collection/index.html"><h3>Document Collection <span aria-hidden="true">↗</span></h3><p>Passenger uploads, organized and verified.</p></a><a class="directory-item" href="./modules/enquiry-hub/index.html"><h3>Social Media Enquiry Hub <span aria-hidden="true">↗</span></h3><p>Capture sources. Match customers. Keep context.</p></a><a class="directory-item" href="./modules/supplier-management/index.html"><h3>Supplier Management <span aria-hidden="true">↗</span></h3><p>The supplier trail, from request to payment.</p></a><a class="directory-item" href="./modules/group-tour-management/index.html"><h3>Group Tour Management <span aria-hidden="true">↗</span></h3><p>Inventory, passengers and payments across the group.</p></a><a class="directory-item" href="./modules/ready-made-website/index.html"><h3>Ready-made Website <span aria-hidden="true">↗</span></h3><p>Tour pages built to share, enquire and check out.</p></a><a class="directory-item" href="./modules/marketing-campaigns/index.html"><h3>Marketing Campaigns <span aria-hidden="true">↗</span></h3><p>Travel patterns become focused campaign audiences.</p></a><a class="directory-item" href="./modules/agent-performance/index.html"><h3>Agent Performance <span aria-hidden="true">↗</span></h3><p>Visible progress. Motivated agents. Clear due work.</p></a><a class="directory-item" href="./modules/team-management/index.html"><h3>Team Management <span aria-hidden="true">↗</span></h3><p>Roles, access and activity for growing teams.</p></a><a class="directory-item" href="./modules/finance-payments/index.html"><h3>Finance &amp; Payments <span aria-hidden="true">↗</span></h3><p>Billing, collections and balances tied to the trip.</p></a><a class="directory-item" href="./modules/reporting/index.html"><h3>Reporting <span aria-hidden="true">↗</span></h3><p>Customer, pipeline, team and payment insights.</p></a><a class="directory-item" href="./modules/itinerary-commerce/index.html"><h3>Itinerary as E-commerce <span aria-hidden="true">↗</span></h3><p>Build, price, publish and move the trip forward.</p></a></div></section><section class="zhp-final zhp-reveal-visual" id="demo">
+      <div><h2>Your travel business, finally working as one.</h2><p>Book a personalized walkthrough of Captain CRM and Group Tour.</p></div>
+      <span class="zhp-calendar-host" data-google-calendar-button data-calendar-label="Book a Demo"></span>
+    </section>
+  </main>
 
-          const name = document.getElementById("contact-name").value;
-          const email = document.getElementById("contact-email").value;
-          const phone = document.getElementById("contact-phone").value;
-          const message = document.getElementById("message").value;
+  
 
-          const googleFormBaseUrl =
-            "https://docs.google.com/forms/d/e/1FAIpQLSe4VrmAX-TXX7aSY3Xwu1FhqSJ_n_aoIbfBzIhaEfk4-qXsKQ/viewform";
-
-          const entryIds = {
-            name: "entry.1971365353",
-            email: "entry.1207444868",
-            phone: "entry.1820085035",
-            message: "entry.1546172747",
-          };
-
-          const prefilledUrl =
-            `${googleFormBaseUrl}?usp=pp_url` +
-            `&${entryIds.name}=${encodeURIComponent(name)}` +
-            `&${entryIds.email}=${encodeURIComponent(email)}` +
-            `&${entryIds.phone}=${encodeURIComponent(phone)}` +
-            `&${entryIds.message}=${encodeURIComponent(message)}`;
-
-          window.open(prefilledUrl, "_blank");
-
-          alert(
-            "Thank you! Please complete your submission in the new tab that just opened.",
-          );
-          this.reset();
-        });
-    </script>
-  </body>
-</html>
+  
+</div>
+<footer class="site-footer"><div class="shell"><div class="footer-main"><div class="footer-brand"><a class="site-brand" href="./index.html" aria-label="Zutrula home"><img src="./assets/zutrula-logo-colour.png" alt="Zutrula"></a><p>The Travel OS.<br>Built around the way travel works.</p><div class="footer-socials"><a href="https://www.facebook.com/profile.php?id=61579047914237" target="_blank" rel="noopener noreferrer" aria-label="Zutrula on Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.7 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.6 1.6-1.6H17V3.8c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.4-4 4.1V10H8v3h2.6v8h3.1Z"/></svg><span>Facebook</span></a><a href="https://www.instagram.com/zutrula/" target="_blank" rel="noopener noreferrer" aria-label="Zutrula on Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.8" r="1" class="social-dot"/></svg><span>Instagram</span></a><a href="https://www.linkedin.com/company/zutrula/" target="_blank" rel="noopener noreferrer" aria-label="Zutrula on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 8.3H3.4V21h3.1V8.3ZM5 3A2 2 0 1 0 5 7a2 2 0 0 0 0-4ZM21 13.7c0-3.8-2-5.6-4.7-5.6-2.2 0-3.1 1.2-3.7 2V8.3H9.5V21h3.1v-6.3c0-1.7.3-3.3 2.4-3.3 2 0 2.1 1.9 2.1 3.4V21H21v-7.3Z"/></svg><span>LinkedIn</span></a></div></div><div><p class="footer-heading">Products</p><div class="footer-links"><a href="./products/captain-crm/index.html">Captain CRM</a><a href="./products/group-tour/index.html">Group Tour Suite</a><a href="./products/itinerary-commerce/index.html">Itinerary as E-commerce</a><a href="./company/index.html">Company</a></div></div><div><p class="footer-heading">Explore the modules</p><div class="footer-links footer-modules"><a href="./modules/document-collection/index.html">Document Collection</a>
+<a href="./modules/enquiry-hub/index.html">Social Media Enquiry Hub</a>
+<a href="./modules/supplier-management/index.html">Supplier Management</a>
+<a href="./modules/group-tour-management/index.html">Group Tour Management</a>
+<a href="./modules/ready-made-website/index.html">Ready-made Website</a>
+<a href="./modules/marketing-campaigns/index.html">Marketing Campaigns</a>
+<a href="./modules/agent-performance/index.html">Agent Performance</a>
+<a href="./modules/team-management/index.html">Team Management</a>
+<a href="./modules/finance-payments/index.html">Finance &amp; Payments</a>
+<a href="./modules/reporting/index.html">Reporting</a>
+<a href="./modules/itinerary-commerce/index.html">Itinerary as E-commerce</a></div></div></div><div class="footer-bottom"><span>© 2026 Zutrula · The Travel OS</span><a href="./privacy-policy/index.html">Privacy Policy</a></div></div></footer><script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script><script>window.addEventListener('load',function(){document.querySelectorAll('[data-google-calendar-button]').forEach(function(target){var anchor=document.createElement('script');target.append(anchor);calendar.schedulingButton.load({url:'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1yzDF3G2vK9Z54KY4A2sF3tEs6S0zYrtT3HttSJwM6mX84h9-1cbCvX0DRAnlWFWYM9cRbhc25?gv=true',color:'#16BCA9',label:target.dataset.calendarLabel||'Book a demo',target:anchor});});});</script></body></html>
